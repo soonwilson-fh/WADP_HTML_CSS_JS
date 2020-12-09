@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Story of Claire</title>
+
+<!-- Font link(s) -->
+<link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+
+<!-- CSS links -->
+<link rel="stylesheet" type="text/css" href="css/css.css"/>
+<link rel="stylesheet" type="text/css" href="css/cssnav.css"/>
+
+<!-- Bootstrap links -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+<!-- shieldui css and js assets in order for the charts to work -->
+<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+ 
+</head> 
+
+<body>
+<header>
+    <nav>
+      <div class="container-full">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+	   <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="spacez" id="homez" style="background-color:#47d1d1; border-radius:8px; "><a href="GreenFutureHomepage.html">Home</a></li>
+            <li class="spacez navigatingitems"><a href="eventsnavpage.html" onclick=>Events</a></li>
+            <li class="spacez navigatingitems"><a href="home.html">Product Sales</a></li>
+            <li class="spacez navigatingitems"><a href="DIY Section.html">DIY Section</a></li>
+            <li class="spacez registerz"><a href="member.html">REGISTER</a></li>
+            <li class="spacez loginz"><a href="login.html">LOG IN</a></li>
+			
+			<!-- Zi Xiang's template -->
+			<li class="dropdown registerz spacez"><a class="dropdown-toggle"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span id="suser" class="welcome">Welcome</span><span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Profile</a></li>
+			  <li><a href="#">View Past Transactions</a></li>
+			  <li><a href="#">View Past Events</a></li>
+			  <li onclick="logout()"><a href="#">Log Out</a></li>
+			</ul>
+
+
+          </ul>
+          <!-- Main Navigation -->
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
+  </header>
+ 
+<div class="container border textz margintop">
+<h1 class="title"> Story of Claire </h1>
+				<p>
+				Claire grew up as a kid in an environment that was dire and without much greenery - A place almost seemingly like a wasteland. 
+				As she grew older and matures more, 
+				she took up voluntarily roles that were contributive to conserving nature and its beautiful greenery.
+				</p>
+				<p>
+				When she completed and graduated from secondary schooling, 
+				she never knew a wide range of opportunities were waiting for her which would allow her to share her passion of saving the environment with many others.
+				After a long period of resting holidays, opens Tertiary school life; Claire's next step to raising environmental awareness.
+				</p>
+				<p>
+				Tertiary lifestyle proved to be very different from the all the schoolings she had before - where she felt that 
+				she was able to more freely act without having much restrictions. 
+				Of course, the most important activity she was able to finally carry out was to influence more people to contribute to the environment.\
+				</p>
+				<p>
+				The first thing she did in her new schooling life, at Nanyang Polytechnic, was to find out any organisations / Co-curricular Activities ( CCAs )
+				that are related to being able to contribute to nature itself. 
+				It is incredibly hard to act by herself.
+				</p>
+				<p>
+				But fortunately she found a place where she could
+				commit and give her all, share her ideals, and envelope her passion and herself in her new CCA - the Nanyang Polytechnic Community Club.
+				Together with like-minded individuals who desires to do more for nature, Claire aspires to become someone who motivate others to start <br>
+				cultivating habits that would do good for the environment. <br>
+				</p>
+				<p>
+				And we, at GreenFuture are a group of people who are influenced by Claire, and would like to do whatever we can to help her out in her glorious mission. 
+				However, to actually turn it into a successful organisation, we will definitely need you and your help, to participate in such activities, to turn this world better, and to build a green future!
+				Every small help matters!
+				</p>
+				</p>
+				<br>
+				<br>
+				<button onclick="goBack()">Back to Home <span style="color:black;">>>></span></button> 
+				<br>
+				<br>
+				</p>
+				
+</div>
+
+<!-- Scrollup -->
+<div class="scrollup floating" style="display: block;">
+<a href="#" style="display: block;">to Top</a> 
+</div>
+<!-- Tree ' back to top ' jquery Script -->
+<script>
+  $(document).ready(function () {
+ $(window).scroll(function () {
+	 if ($(this).scrollTop() > 100)    {$('.scrollup').fadeIn();} 
+	 else 							  {$('.scrollup').fadeOut();}
+ });
+$('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+<!-- 600 represents the speed of scrolling up -->
+        return false;
+    });
+});
+</script>
+
+<!-- css for tree ' back to top ' scroll up -->
+ <style>
+ 
+
+.scrollup {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    text-indent: -9999px; 
+	/* Indent ' to Top ' text from line 225, to extreme left to hide the words */
+	z-index:9999px;
+	/* Highest stack, will always appear infront of other codes */
+    background: url('BacktoTop.png') no-repeat;
+ background-size: contain;    cursor:pointer;
+}
+
+
+.floating{
+    animation-name: Floatingx;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+
+@keyframes Floatingx {
+    from {bottom:0px;}
+    65% { bottom:15px;}
+    to { bottom:-0px; }    
+}
+    
+	
+  </style>
+  
+  
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+</html>

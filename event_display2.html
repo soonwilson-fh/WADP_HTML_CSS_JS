@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+<link rel="stylesheet" type="text/css" href="css/event_display.css"/>
+<link rel="stylesheet" type="text/css" href="css/css.css"/>
+<link rel="stylesheet" type="text/css" href="css/cssnav.css"/>
+  <script src="psnavbar.js"></script>
+  <script src="loginnadmin.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+
+</style>
+<title>
+Events
+</title>
+
+</head>
+
+<body onload="showTable()" >
+<!--Nav bar-->
+<header> 
+	<nav>
+<div class="container-full">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" >
+	   <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+    	<ul class="nav navbar-nav">
+    		<li id="homez" class="spacez" style="background-color:#47d1d1; border-radius:8px;  "><a href="GreenFutureHomepage.html">Home</a></li>
+    		<li class="spacez navigatingitems"><a href="eventsnavpage.html">Events</a></li>
+			<li class="spacez navigatingitems" id="productsales"><a href="home.html">Product Sales</a></li>
+    		<li class="dropdown registerz spacez" id="adminproductsales" style="display:none"><a class="dropdown-toggle"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span>Product Sales</span><span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="adminapprove.html">Admin Approve</a></li>
+			  <li><a href="homeadmin.html">Admin Home</a></li>
+			  <li><a href="second handadmin.html">Admin Second Hand</a></li>
+			  <li><a href="decorativeadmin.html">Admin Decorative</a></li>
+			   <li><a href="decorativeadmin.html">Admin School Use</a></li>
+			  
+			</ul>
+    		<li class="spacez navigatingitems"><a href="DIY Section">DIY Section</a></li>
+			<li id="reg" class="spacez registerz"><a href="member.html">REGISTER</a></li>
+			<li id="log" class="spacez loginz"><a href="login.html">LOG IN</a></li>
+			
+			<!-- Zi Xiang's template -->
+			<li class="dropdown registerz spacez"><a class="dropdown-toggle"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span id="sadmin">Welcome</span><span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="profile.html">Profile</a></li>
+			  <li><a href="transaction.html">View Past Transactions</a></li>
+			  <li><a href="contribution.html">View Past Events</a></li>
+			  <li onclick="committee()" id="committeen"><a href="#">Sign up for committee</a></li>
+			  <li onclick="logout()"><a href="#">Log Out</a></li>
+			</ul>
+      
+    	
+    	</ul><!-- Main Navigation -->
+    </div><!--/.nav-collapse -->
+</div>
+	</nav>
+</header>
+<br>
+<center><h1 style="text-align:center;font-weight:bold;color:black">Events</h1></center>
+<button onclick='openpage()'>Click here to add new events</button>
+<button onclick='removetoprow()'>Click here to remove oldest event</button>
+<button onclick='removebottomrow()'>Click here to remove newest event</button>
+<br>
+<br>
+<button><a href='test2signup.html'>Signup for events here </a></button>
+<br>
+<br>
+<center>
+<div id="selection">
+<table id="displayEventOnTable" style="width:85%" onload="showEvents">
+  
+</table>
+</div>
+</center>
+<script>
+/*This function is to store the static data */
+
+
+
+
+var showEventss = JSON.parse(localStorage.getItem('createEventsData'));
+
+
+/*Create table function for createEventTable */
+
+function showTable(){
+	
+	if (showEventss){
+		var thetable = document.getElementById("displayEventOnTable");
+		var numOfRow=thetable.rows.length;
+		for(var j=0; j < numOfRow ; j++)
+		{
+			thetable.deleteRow(0);
+		}
+		for (var i=showEventss.length; i>0;i--)
+		{
+			var row=thetable.insertRow(0);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var cell4 = row.insertCell(3);
+			var cell5 = row.insertCell(4);
+			var cell6 = row.insertCell(5);
+			var cell7 = row.insertCell(6);
+			var cell8 = row.insertCell(7);
+			
+			cell1.innerHTML = showEventss[i-1].EventID;
+			cell2.innerHTML = showEventss[i-1].Eventname;
+			cell3.innerHTML = showEventss[i-1].Eventdate;
+			cell4.innerHTML = showEventss[i-1].Eventlocation;
+			cell5.innerHTML = showEventss[i-1].Eventtime;
+			cell6.innerHTML = showEventss[i-1].EventIC;
+			cell7.innerHTML = showEventss[i-1].Eventslots;
+			cell8.innerHTML = showEventss[i-1].Eventdescription;
+		}
+		
+		var table=document.getElementById("displayEventOnTable");
+		var row = table.insertRow(0);
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		var cell4 = row.insertCell(3);
+		var cell5 = row.insertCell(4);
+		var cell6 = row.insertCell(5);
+		var cell7 = row.insertCell(6);
+		var cell8 = row.insertCell (7);
+		cell1.innerHTML = "Event ID";
+		cell2.innerHTML = "Name";
+		cell3.innerHTML = "Date";
+		cell4.innerHTML = "Location";
+		cell5.innerHTML = "Timing";
+		cell6.innerHTML = "Event IC";
+		cell7.innerHTML = "Slots";
+		cell8.innerHTML = "Description";
+	}
+}
+function openpage(){
+	window.open("eventadmintest.html")
+
+}
+
+function removebottomrow(){
+
+
+       alert("bottom row remove");		
+	var thetable = document.getElementById("displayEventOnTable");
+			var row=thetable.deleteRow(-1);
+			showEventss.splice(-1);
+localStorage.setItem('createEventsData',JSON.stringify(showEventss));		
+}
+
+function removetoprow(){
+       alert("top row remove");	
+	var thetable = document.getElementById("displayEventOnTable");
+			var row=thetable.deleteRow(1);
+			showEventss.splice(0,1);
+localStorage.setItem('createEventsData',JSON.stringify(showEventss));		
+}
+
+var admin = sessionStorage.getItem("admin");
+var admin = JSON.parse(admin);
+var sadmin = admin;
+
+var str = document.getElementById("sadmin").innerHTML; 
+var res = str.replace("Welcome", sadmin);
+document.getElementById("sadmin").innerHTML = res;
+
+if (document.getElementById("sadmin").innerHTML != "null") {
+	var nbar = document.getElementById("nnbar");
+	var str1 = document.getElementById("reg").innerHTML; 
+	var res1 = str1.slice(50);
+	document.getElementById("reg").innerHTML = res1;
+
+	var str2 = document.getElementById("log").innerHTML; 
+	var res2 = str2.slice(50);
+	document.getElementById("log").innerHTML = res2;
+}
+
+document.addEventListener("DOMContentLoaded",docIsReady);
+var sucommittee; 
+
+function docIsReady(){
+	sucommittee = localStorage.getItem("sucommittee");
+ 
+	if (sucommittee == null){
+		sucommittee = [];
+	}
+	else {	
+		sucommittee = JSON.parse(sucommittee);
+	}
+	}
+
+function committee() {
+var admin = sessionStorage.getItem("admin");
+var admin = JSON.parse(admin);
+var sadmin = admin;
+var info = localStorage.getItem("student_info");
+var info = JSON.parse(info);
+for (var i = 0; i < info.length; i++){
+		var storedadmin = info[i].admin;
+		if (storedadmin == sadmin){
+			var sname = info[i].name;
+			var sadmin = info[i].admin;
+			var sphone = info[i].phone;
+			var fcommittee = {"sname":sname,"sadmin":sadmin,"sphone":sphone};
+			sucommittee.push(fcommittee);
+			localStorage.setItem("sucommittee",JSON.stringify(sucommittee));
+			}
+			}
+}
+</script>
+</body>
+
+</html>

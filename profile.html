@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+<!-- <link rel="stylesheet" type="text/css" href="css.css"/>
+<link rel="stylesheet" type="text/css" href="cssnav.css"/> -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/cssnav.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+form {
+	 height:auto;
+	 width:100%; 
+	 margin-top:2%;
+}
+
+input {
+	margin:0.3%;
+}
+
+.put {
+	width:35%;
+}
+</style>
+
+</head>
+<script>
+function logout() {
+alert("Thank you for using our page");
+window.location.href = "GreenFutureHomepage.html";
+}
+									
+
+</script>
+<body>
+<header> 
+	<nav>
+<div class="container-full">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" >
+	   <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+    	<ul class="nav navbar-nav">
+    		<li id="homez" class="spacez" style="background-color:#47d1d1; border-radius:8px;  "><a href="GreenFutureHomepage.html">Home</a></li>
+    		<li class="spacez navigatingitems"><a href="eventsnavpage.html">Events</a></li>
+			<li class="spacez navigatingitems" id="productsales"><a href="home.html">Product Sales</a></li>
+    		<li class="dropdown registerz spacez" id="adminproductsales" style="display:none"><a class="dropdown-toggle"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span>Product Sales</span><span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="adminapprove.html">Admin Approve</a></li>
+			  <li><a href="homeadmin.html">Admin Home</a></li>
+			  <li><a href="second handadmin.html">Admin Second Hand</a></li>
+			  <li><a href="decorativeadmin.html">Admin Decorative</a></li>
+			   <li><a href="decorativeadmin.html">Admin School Use</a></li>
+			  
+			</ul>
+    		<li class="spacez navigatingitems"><a href="DIY Section">DIY Section</a></li>
+			<li id="reg" class="spacez registerz"><a href="member.html">REGISTER</a></li>
+			<li id="log" class="spacez loginz"><a href="login.html">LOG IN</a></li>
+			
+			<!-- Zi Xiang's template -->
+			<li class="dropdown registerz spacez"><a class="dropdown-toggle"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span id="sadmin">Welcome</span><span class="caret"></span></a>
+			<ul id="menu" class="dropdown-menu">
+			  <li><a href="profile.html">Profile</a></li>
+			  <li><a href="transaction.html">View Past Transactions</a></li>
+			  <li><a href="contribution.html">View Past Events</a></li>
+			  <li onclick="committee()" id="committeen"><a href="#">Sign up for committee</a></li>
+			  <li onclick="logout()"><a href="#">Log Out</a></li>
+			</ul>
+      
+    	
+    	</ul><!-- Main Navigation -->
+    </div><!--/.nav-collapse -->
+</div>
+	</nav>
+</header>
+<script>
+var admin = sessionStorage.getItem("admin");
+var admin = JSON.parse(admin);
+var sadmin = admin;
+var info = localStorage.getItem("student_info");
+var info = JSON.parse(info);
+for (var s = 0; s < info.length; s++){
+		var storedadmin = info[s].admin;
+		if (storedadmin == sadmin){
+			if (info[s].role == "Committee") {
+			productsales.style.display="none";
+			adminproductsales.style.display="block";
+		}
+			}
+			}
+</script>
+<div class="container-fluid">
+<div class="row">
+<form class="col-md-8">
+	<input class="put" id="nname" placeholder="Your Name" type="text" tabindex="1" value="" autofocus disabled /><br>
+	<input class="put" id="nadmin" placeholder="Admin No." type="text" tabindex="2" value="" autofocus disabled /><br>
+	<input class="put" id="npassword" placeholder="Password" type="password" tabindex="3" value="" autofocus /><br>
+	<input class="put" id="nrole" placeholder="Role" type="text" tabindex="4" value="" disabled /><br>
+	<input class="put" id="nsince" placeholder="Member since:" type="text" tabindex="5" value="" disabled /><br>
+	<input class="put" id="npoints" placeholder="Points" type="text" tabindex="5" value="" disabled /><br>
+	Gender &nbsp;
+	<input type="radio" id="ngender" name="gender" value="male" tabindex="6" value="" /> Male
+	<input type="radio" id="ngender" name="gender" value="female" value="" /> Female <br>
+	<input class="put" id="nphone" placeholder="Your Phone Number" type="tel" minlength="8" maxlength="8" tabindex="7" value="" required /><br>
+	<input class="put" id="nemail" placeholder="Your Email" type="email" tabindex="8" value="" required /><br>
+	Preferred mode of contact:<br>
+	<input id="ncontact" type="radio" name="contact" tabindex="6" value="WhatsApp" required> WhatsApp
+	<input id="ncontact" type="radio" name="contact" value="Message" required> Message
+	<input id="ncontact" type="radio" name="contact" value="Email" required> Email <br>
+	School of ______: &nbsp;
+	<select id="nschool" tabindex="9" value="">
+		<option value="Business Management">SBM</option>
+		<option value="Chemical & Life Sciences">SCL</option>
+		<option value="Design">SDN</option>
+		<option value="Engineering">SEG</option>
+		<option value="Health Sciences">SHS</option>
+		<option value="Information Technology">SIT</option>
+		<option value="Interactive & Digital Media">SIDM</option>
+	</select><br>
+	Emergency Contact<br>
+	<input class="put" id="nename" placeholder="Name" type="text" tabindex="10" value="" required /><br>
+	<input class="put" id="nephone" placeholder="Phone No." type="tel" minlength="8" maxlength="8" tabindex="11" value="" required /><br>
+	<input class="put" id="nerelation" placeholder="Relationship" type="text" tabindex="12" value="" required /><br>
+	<input id="sub" onclick="update()" type="submit" value="Update" tabindex="13">
+</form>
+<img class="col-sm-4" src="cute.jpg">
+</div>
+</div>
+<script>
+var admin = sessionStorage.getItem("admin");
+var admin = JSON.parse(admin);
+var sadmin = admin;
+
+var str = document.getElementById("sadmin").innerHTML; 
+var res = str.replace("Welcome", sadmin);
+document.getElementById("sadmin").innerHTML = res;
+
+if (document.getElementById("sadmin").innerHTML != "null") {
+	var nbar = document.getElementById("nnbar");
+	var str1 = document.getElementById("reg").innerHTML; 
+	var res1 = str1.slice(50);
+	document.getElementById("reg").innerHTML = res1;
+
+	var str2 = document.getElementById("log").innerHTML; 
+	var res2 = str2.slice(50);
+	document.getElementById("log").innerHTML = res2;
+}
+
+document.addEventListener("DOMContentLoaded",docIsReady);
+var sucommittee; 
+
+function docIsReady(){
+	sucommittee = localStorage.getItem("sucommittee");
+ 
+	if (sucommittee == null){
+		sucommittee = [];
+	}
+	else {	
+		sucommittee = JSON.parse(sucommittee);
+	}
+	}
+
+function committee() {
+var admin = sessionStorage.getItem("admin");
+var admin = JSON.parse(admin);
+var sadmin = admin;
+var info = localStorage.getItem("student_info");
+var info = JSON.parse(info);
+for (var i = 0; i < info.length; i++){
+		var storedadmin = info[i].admin;
+		if (storedadmin == sadmin){
+			var sname = info[i].name;
+			var sadmin = info[i].admin;
+			var sphone = info[i].phone;
+			var fcommittee = {"sname":sname,"sadmin":sadmin,"sphone":sphone};
+			sucommittee.push(fcommittee);
+			localStorage.setItem("sucommittee",JSON.stringify(sucommittee));
+			}
+			}
+}
+
+var info = localStorage.getItem("student_info");
+var info = JSON.parse(info);
+for (var s = 0; s < info.length; s++){
+		var storedadmin = info[s].admin;
+		if (storedadmin == sadmin){
+			document.getElementById("nname").value = info[s].name;
+			document.getElementById("nadmin").value = info[s].admin;
+			document.getElementById("nrole").value = info[s].role;
+			document.getElementById("nsince").value = info[s].date;
+			document.getElementById("npoints").value = info[s].points;
+			document.getElementById("npassword").value = info[s].password;
+			document.getElementById("ngender").value = info[s].gender;
+			document.getElementById("nphone").value = info[s].phone;
+			document.getElementById("nemail").value = info[s].email;
+			document.getElementById("ncontact").value = info[s].contact;
+			document.getElementById("nschool").value = info[s].school;
+			document.getElementById("nename").value = info[s].emergency["ename"];
+			document.getElementById("nephone").value = info[s].emergency["ephone"];
+			document.getElementById("nerelation").value = info[s].emergency["erelation"];
+			if (info[s].role == "Committee") {
+				var app = document.createElement("li");
+				var appn = document.createTextNode("Candidates");
+				ref = document.createElement("a");
+				ref.setAttribute("href","approvedcom.html");
+				ref.appendChild(appn);
+				app.appendChild(ref);
+				var parent = document.getElementById("menu");
+				var child = document.getElementById("committeen");
+				parent.replaceChild(app,child);
+				
+				
+			}
+			}
+			}
+function update(){
+var info = localStorage.getItem("student_info");
+var info = JSON.parse(info);
+for (var i = 0; i < info.length; i++){
+		var storedadmin = info[i].admin;
+		if (storedadmin == sadmin){
+		info[i].name = document.getElementById("nname").value;
+		info[i].admin = document.getElementById("nadmin").value;
+		info[i].today = document.getElementById("nsince").value;
+		info[i].password = document.getElementById("npassword").value;
+		info[i].phone = document.getElementById("nphone").value;
+		info[i].email = document.getElementById("nemail").value;
+		info[i].contact = document.getElementById("ncontact").value;
+		info[i].school = document.getElementById("nschool").value; 
+		info[i].emergency.ename = document.getElementById("nename").value;
+		info[i].emergency.ephone = document.getElementById("nephone").value;
+		info[i].emergency.erelation = document.getElementById("nerelation").value;
+		var name = info[i].name;
+		var admin = info[i].admin;
+		var today = info[i].today;
+		var password = info[i].password;
+		var phone = info[i].phone;
+		var email = info[i].email;
+		var contact = info[i].contact;
+		var school = info[i].school;
+		var ename = info[i].emergency.ename
+		var ephone = info[i].emergency.ephone;
+		var erelation = info[i].emergency.erelation;
+		localStorage.setItem("student_info",JSON.stringify(info));
+}
+}
+}
+
+
+</script>
+</body>
+</html>

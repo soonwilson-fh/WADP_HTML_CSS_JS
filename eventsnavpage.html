@@ -1,0 +1,217 @@
+<head>
+
+<title>Event page</title>
+
+<!-- CSS links -->
+<link rel="stylesheet" type="text/css" href="css/css.css"/>
+<link rel="stylesheet" type="text/css" href="css/cssnav.css"/>
+
+<!-- Bootstrap links -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <!--Style-->
+ 
+<style>		
+<!--Wilson nav bar -->
+header { 
+background-color:#33cccc;
+}
+
+#space0, .space, .login, .signup {
+margin-top: 10px;
+}
+
+.space, #space0 {
+margin-left:10px;
+margin-right:10px;
+}
+
+
+.space > a, #space0 > a {
+color:#262626;
+font-size:150%;
+}
+
+
+.login > a, .signup > a {
+
+color:#262626;
+font-size:130%;
+font-weight:bolder;
+}
+
+.signup > a {
+
+float:left;
+}
+
+
+.login > a {
+float:right;
+}
+
+
+.login > a:hover, .space > a:hover, .signup > a:hover {
+background-color:#33cccc !important;
+}
+
+
+#space0 > a:hover, .space > a:hover { 
+color:white; 
+text-shadow: 3px 6px 4px;
+}
+
+.login > a:hover, .signup > a:hover {
+color:#FF7F50;
+text-shadow: 3px 6px 4px;
+}
+
+#space0 > a:hover {
+background-color:#47d1d1 !important;
+}
+
+.icon-bar { 
+    background-color:#808080;
+}
+
+
+.navbar-toggle .icon-bar+.icon-bar {
+    margin-top: 4px;
+}
+
+
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+}
+
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+	background-color:transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+
+.navbar-toggle:hover {
+	background-color:#e6e6e6;
+}
+
+<!--Event Nav bar-->																						
+	
+#big {   
+    width: 100%;
+	}
+
+.container{
+    display: flex;
+	justify-content:center;
+}
+.fixed{
+    width: 20%;
+	height: 15%;
+	border-radius: 30px;
+background-color:#c2efef;
+margin-right:9%;
+margin-top:5%;	
+padding-top:1.5%;
+}	
+.flex-item{
+    flex-grow: 1;
+}
+
+<!--event area-->
+
+#white {
+color:white;
+}
+</style>
+
+</head> 
+
+
+<body>
+<!--Nav bar-->
+<header> 
+	<nav>
+<div class="container-full">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" >
+	   <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+    	<ul class="nav navbar-nav">
+    		<li id="space0" style="background-color:#47d1d1; border-radius:8px;  "><a href="GreenFutureHomepage.html">Home</a></li>
+    		<li class="space"><a href="eventsnavpage.html" onclick=>Events</a></li>
+    		<li class="space"><a href="home.html">Product Sales</a></li>
+    		<li class="space"><a href="DIY Section.html">DIY Section</a></li>
+			<li class="signup"><a href="member.html">REGISTER</a></li>
+			<li class="login"><a href="login.html">LOG IN</a></li>
+			
+			<!-- Zi Xiang's template -->
+			<li class="dropdown signup"><a class="dropdown-toggle"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span id="suser">Welcome</span><span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Profile</a></li>
+			  <li><a href="#">View Past Transactions</a></li>
+			  <li><a href="#">View Past Events</a></li>
+			  <li onclick="logout()"><a href="#">Log Out</a></li>
+			</ul>
+      
+    	
+    	</ul><!-- Main Navigation -->
+    </div><!--/.nav-collapse -->
+</div>
+	</nav>
+</header>
+<br>
+<br>
+<br>
+
+<h1 style="text-align:center;font-weight:bold;color:white"> Events</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div id="big" class="container" >
+
+<div class="fixed"><a href="event_display.html">
+<h3> Our Events</h3></a>
+</div>
+
+<div class="fixed"><a href="https://www.w3schools.com">
+<h3> Events from <br>our partners</h3>
+</div></a>
+
+<div class="fixed"><a href="https://www.w3schools.com">
+<h3>Campaigns</h3>
+</div></a>
+
+<div class="fixed"><a href="https://www.w3schools.com">
+<h3> Events from <br>third party</h3></a>
+</div></a>
+
+</div>
+
+
+
+</body>
+
+</html>

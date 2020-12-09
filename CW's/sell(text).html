@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Shop Item - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	input[type=text],input[type=number],textarea {
+    width:50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+button:hover {background-color: #3e8e41}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+	</style>
+  </head>
+
+<body>
+
+<div id="navbar">
+  <a class="active" href="javascript:void(0)">Home</a>
+  <a href="javascript:void(0)">News</a>
+  <a href="javascript:void(0)">Contact</a>
+  <a href="shophomepage.html.html" style="float:right">Return</a>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+</div>
+<div id="background">
+
+<div class="detail">
+  <h1 style="font-size: 4rem;font-family: cursive;text-align:center"><button class="btn" style="margin-right:10px;"><a href="sell.html" ><i class="fa fa-caret-square-o-left"></i></a></button><span>Detail</span></h1>
+  <form method="post" style="text-align:center;" onsubmit="list();return false">
+  <fieldset>
+	<div>
+    <p>Name:<input type="text" id="productName" placeholder="Name your product" name="name"></p>
+    <p>S$<input type="number" placeholder="Price of the product" name="price" id="price"></p>
+	<legend>Description</legend>
+	<h6>Describe what you are selling and include any details .People loves items with stories</h6>
+  <textarea rows="4" cols="50" placeholder="Description" style="max-width:95%" id="textarea"></textarea>
+	<p>Effort:<input type="number" placeholder="Tell the buyer the amount of effort u put in in making the product" id="effort" name="hour"></p>
+	<p >Categories
+	<select name="category" id="category">
+    <option value="plastic">plastic</option>
+    <option value="glass">glass</option>
+    <option value="metal">metal</option>
+    <option value="paper">paper</option>
+  </select>
+	</p>
+
+  
+  <button class="button" type="submit">List It!!</button>
+  <script>
+  document.addEventListener("DOMContentLoaded",docIsReady);
+var productInfo; 
+
+function docIsReady(){
+	productInfo=localStorage.getItem("productInfo");
+ 
+	if (productInfo==null){
+		productInfo=[];
+	}
+	else {	
+		productInfo=JSON.parse(productInfo);
+	}
+	}
+	
+function list() {
+	var name = document.getElementById("productName").value;
+	var price = document.getElementById("price").value;
+	var textarea=document.getElementById("textarea").value;
+	var effort = document.getElementById("effort").value;
+	var category = document.getElementById("category").value;
+	var info = {"name":name,"price":price,"Description":textarea,"category":category,"Effort":effort};
+	productInfo.push(info);
+	localStorage.setItem("productInfo",JSON.stringify(productInfo));
+	alert("You have successfully list your product!Please wait for a few day for verification!");
+	location.href="shophomepage.html.html"
+	return false;
+	}
+	</script>
+</form>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	</div>
+</div>
+  </body>
+
+</html>

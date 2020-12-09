@@ -1,0 +1,96 @@
+header, footer { 
+background-color:#33cccc;
+}
+
+.spacez {
+margin: 10px 10px 0px 10px;
+}
+
+
+#homez > a, .navigatingitems > a {
+color:#262626;
+font-size:150%;
+}
+
+
+.loginz > a, .registerz > a {
+color:#262626;
+font-size:130%;
+font-weight:bolder;
+}
+
+
+.loginz > a {
+float:right;
+}
+
+
+.registerz > a {
+float:left;
+}
+
+
+
+.loginz > a:hover, .registerz > a:hover, .navigatingitems > a:hover {
+background-color:#33cccc !important;
+}
+
+.loginz > a:hover, .registerz > a:hover {
+color:#FF7F50;
+text-shadow: 3px 6px 4px;
+}
+
+#homez > a:hover, .navigatingitems > a:hover { 
+color:white; 
+text-shadow: 3px 6px 4px;
+}
+
+/* for home, doesn't require !important because ID has a specificity of 100 weight, as compared to 10 for class */
+#homez > a:hover {
+background-color:#47d1d1 ;
+border-radius: 22px;
+}
+
+.icon-bar { 
+    background-color:#808080;
+}
+
+/* line 58 to 67* makes a toggle button using css*/
+.navbar-toggle .icon-bar+.icon-bar {
+    margin-top: 4px;
+}
+
+
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+}
+
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+.navbar-toggle:hover {
+	background-color:#e6e6e6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

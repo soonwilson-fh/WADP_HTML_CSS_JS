@@ -1,0 +1,716 @@
+<!DOCTYPE HTML>
+<html>
+<!-- 
+Above all, don't lie to yourself. 
+The man who lies to himself and listens to his own lie comes to a point that he cannot distinguish the truth within him, 
+or around him, and so loses all respect for himself and for others. 
+And having no respect he ceases to love.
+-->
+<head> 
+  <title>Home Main</title>
+
+  <!-- Font link(s) -->
+  <link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+
+  <!-- CSS links -->
+  <link rel="stylesheet" type="text/css" href="css/css.css" />
+  <link rel="stylesheet" type="text/css" href="css/cssnav.css" />
+
+  <!-- JavaScript links -->
+  <script src="psnavbar.js"></script>
+  <script src="loginnadmin.js"></script>
+  
+  <!-- Bootstrap links -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- shieldui css and js assets in order for the charts to work -->
+  <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+  <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+  
+  <!-- Datejs link -->
+  <script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
+  
+</head>
+
+<body>
+ <header> 
+	<nav>
+<div class="container-full">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" >
+	   <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+    	<ul class="nav navbar-nav">
+    		<li id="homez" class="spacez" style="background-color:#47d1d1; border-radius:8px;  "><a href="GreenFutureHomepage.html">Home</a></li>
+    		<li class="spacez navigatingitems"><a href="eventsnavpage.html">Events</a></li>
+			<li class="spacez navigatingitems" id="productsales"><a href="home.html">Product Sales</a></li>
+    		<li class="dropdown registerz spacez" id="adminproductsales" style="display:none"><a class="dropdown-toggle"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span>Product Sales</span><span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="adminapprove.html">Admin Approve</a></li>
+			  <li><a href="homeadmin.html">Admin Home</a></li>
+			  <li><a href="second handadmin.html">Admin Second Hand</a></li>
+			  <li><a href="decorativeadmin.html">Admin Decorative</a></li>
+			   <li><a href="decorativeadmin.html">Admin School Use</a></li>
+			  
+			</ul>
+    		<li class="spacez navigatingitems"><a href="DIY Section.html">DIY Section</a></li>
+			<li id="reg" class="spacez registerz"><a href="member.html">REGISTER</a></li>
+			<li id="log" class="spacez loginz"><a href="login.html">LOG IN</a></li>
+			
+			<!-- Zi Xiang's template -->
+			<li class="dropdown registerz spacez"><a class="dropdown-toggle"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span id="sadmin">Welcome</span><span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="profile.html">Profile</a></li>
+			  <li><a href="transaction.html">View Past Transactions</a></li>
+			  <li><a href="contribution.html">View Past Events</a></li>
+			  <li onclick="committee()" id="committeen"><a href="#">Sign up for committee</a></li>
+			  <li onclick="logout()"><a href="#">Log Out</a></li>
+			</ul>
+      
+    	
+    	</ul><!-- Main Navigation -->
+    </div><!--/.nav-collapse -->
+</div>
+	</nav>
+</header>
+    <br>
+	
+    
+
+	<div class="border container" style="font-style:italic;">
+	<p style="text-align:center" class="texty">" When one tugs at a single thing in nature, he finds it attached to the rest of the world. " <br> ~ John Muir </p>
+    <img src="Images/Back to Top.png" alt="GreenFuture Icon" style="width:20%; margin:auto; display:block;">
+	<h1> WELCOME to <span class="greeninline">GreenFuture</span>!</h1>
+	</div>
+	<br>
+	
+	<div class="border container-fluid">
+	<div style="border:5px double black; border-radius:30px;" class= "col-md-4">
+	<h1 class="title"> Our Values </h1>
+	<!-- Values--> 
+	<p><span class="fontsize">Seeking</span><span class="textz"> to help cultivate an original purpose in yet-to-be environmentalists </span> </p>
+	<p><span class="fontsize">Striving</span><span class="textz"> to provide a platform to bring out the best of individuals </span></p> 
+	<p><span class="fontsize">Serving</span><span class="textz"> to shape a positive mindset towards conservation of environment </span></p>
+    </div>
+	
+	<div style="border:5px double black; border-radius:30px;" class="col-md-4">  
+	<h1 class="title"> Our Mission </h1> 
+	<!-- Mission -->
+      <p class="textz">People need nature - and to contribute to conserving the environment for the world, GreenFuture was founded to work towards the aim. </p>
+	  <p class="textz"> Through creating eco-friendly products, raising environmental awareness and a caring community, we encourage people to protect
+	  <br> the nature that has provided us food, fresh water and livelihoods. </p>
+	</div>
+	
+	<div style="border:5px double black; border-radius:30px;" class="col-md-4">
+	 <h1 class="title"> Our Vision </h1>
+	 <!-- Vision -->
+	  <p class="textz"> The world's current situation is this - </p>
+	  <p class="textz"> If there are reminders such as anti-litter signs on the streets, individuals would make an effort to contribute to that cause. 
+	  <br> However, if such signs does not exist, litters can highy possibly be found in every corner of the street. </p>
+	  <p class="textz"> We here at GreenFuture, hope to influence each and every person to have the integrity and steadfastness 
+	  <br> deserving of a good resident of mother Earth, 
+	   and for them to give their utmost best to preserve the indescriptible beauty of this planet. </p>
+	</div>
+
+	<br>
+	<div> 
+     <h3 class="textz"">Feeling up for it? Come and discover your very innate attachment to nature!</h3>
+	  <br> <p class="textz" style="text-align:center;"><a href="member.html">JOIN </a>us now!</p>
+    </div>
+	</div>
+	
+	<br>
+	
+    <!-- Carousel Slides -->
+    <div id="myCarousel" class="carousel carouseldisplay slide jcarousel container-fluid" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner ">
+        <div class="item active">
+          <img src="Images/RGeo Council Volunteer Pic 3.jpeg" alt="Geo Council Volunteers in action" style="width:85%; margin:auto;">
+        </div>
+
+        <div class="item">
+          <img src="Images/Random volunteer grp.jpg" alt="Removing plastic bag from a tree" style="width:85%; margin:auto;">
+        </div>
+
+        <div class="item">
+          <img src="Images/Random volunteer grp 2.jpg" alt="Picking up rubbish at East Coast Park" style="width:85%; margin:auto;">
+        </div>
+
+        <div class="item">
+          <img src="Images/Plastic Bottle on Walls.jpg" alt="Artificial garden made out of plastic bottles" style="width:85%; margin:auto;">
+        </div>
+
+        <div class="item">
+          <img src="Images/Piggy Bank Recycle Bottle.jpg" alt="Piggy Bank made of recycle bottle" style="width:85%; margin:auto;">
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+
+      <span class="sr-only">Previous</span>
+    </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+
+      <span class="sr-only">Next</span>
+    </a>
+    </div>
+ 
+  <br>
+   
+  </div>
+  <div class="border container">
+	
+	<h2 class="greeninline" > Let's go green to get our globe clean.</h2>
+	<br>
+	
+    <div id="slots" style="font-size:135%;" class="col-md-6">
+    <button class="button" onclick="reload()" style="margin-bottom:4%;"> >>> Get new count on slots left  <<<</button>
+	</div>
+	
+    <div class="col-md-6" style="margin-top:-3%">  
+      <h1 class="countdown" style="color:#87ceeb; font-weight:bold;">Countdown to <span id="latestevent">countingEventName()</span></h1>
+      <div id="clockdiv">
+        <div>
+          <span id="days"></span>  
+          <div class="smalltext">Days</div>
+        </div>
+        <div>
+          <span id="hours"></span>
+          <div class="smalltext">Hours</div>
+        </div>
+        <div>
+          <span id="minutes"></span>
+          <div class="smalltext">Minutes</div>
+        </div>
+        <div>
+          <span id="seconds"></span>
+          <div class="smalltext">Seconds</div>
+        </div>
+      </div>
+	</div>
+	
+   </div>
+	
+
+	<!-- Volunter Slots Script -->
+  <script>
+ var event_info;
+ var eventadmin_info; 
+ 
+  function docIsReady(){
+		event_info = localStorage.getItem("student_info_events");
+		if (event_info==null) {
+			event_info=[];
+			}
+		else {
+			event_info =JSON.parse(event_info);
+			}
+			//var Eventslots = document.getElementById("Eventslots").value;
+			//var td=document.getElementById("changableslots1").value
+	}
+	
+	document.addEventListener("DOMContentLoaded",docIsReady, docIsReady2);
+	
+	//function slotsfunction(){
+	//	var storage=localStorage.getItem("createEventsData");
+    //
+	//	if (storage==null) {
+	//	storage=[];
+	//	}
+	//	else{
+	//	storage=JSON.parse(createEventsData);
+	//	}	
+	//}
+	
+	function countingEventName(){
+		var eventadmin_info = JSON.parse(localStorage.getItem('createEventsData'));	
+		var valid=false;
+		for (var h=0; h<eventadmin_info.length ;h++){
+		
+		{valid=true;}
+		if (valid){
+		var storedeventname = eventadmin_info[h].Eventname; 
+
+					localStorage.setItem('createEventsData',JSON.stringify(eventadmin_info));
+		return storedeventname;
+					}
+				}		
+		}
+	
+	function countingTime(){
+		var eventadmin_info=JSON.parse(localStorage.getItem('createEventsData'));	
+		var valid=false;
+		for (var j=0; j<eventadmin_info.length ;j++){
+		
+		{valid=true;}
+		if (valid){
+		var storedtime = eventadmin_info[j].Eventtime;
+		  
+
+					localStorage.setItem('createEventsData',JSON.stringify(eventadmin_info));
+		return storedtime;
+					}
+				}		
+		}
+		
+		
+	
+
+	function docIsReady2(){
+		eventadmin_info = localStorage.getItem("createEventsData");
+		if (eventadmin_info==null) {
+			eventadmin_info=[];
+			}
+		else {
+			eventadmin_info =JSON.parse(eventadmin_info);
+			}
+	}
+	
+	document.addEventListener("DOMContentLoaded",docIsReady2);
+	
+	var eventadmin_info = localStorage.getItem("createEventsData");
+	    eventadmin_info = JSON.parse(eventadmin_info);
+		
+    
+	
+   function mevent() {
+ 
+	
+	var table = document.createElement("table");
+    var trow1= document.createElement("tr");
+	table.appendChild(trow1);
+	
+	var thead1= document.createElement("th");
+	trow1.appendChild(thead1);
+	
+	var thead1_value= document.createTextNode("First event added");
+	thead1.appendChild(thead1_value);
+	
+	var thead2= document.createElement("th");
+	trow1.appendChild(thead2);
+	
+	var thead2_value = document.createTextNode("Time ");
+	thead2.appendChild(thead2_value);
+	
+	var thead3 = document.createElement("th");
+	trow1.appendChild(thead3);
+	
+	var thead3_value = document.createTextNode("Volunteer slots available ");
+	thead3.appendChild(thead3_value);
+	
+	
+	var trow2 = document.createElement("tr");
+	table.appendChild(trow2);
+	
+	var tdata01 = document.createElement("td");
+	trow2.appendChild(tdata01);
+	
+	var tdata01_value = document.createTextNode(countingEventName());
+	tdata01.appendChild(tdata01_value);
+	
+	
+	var tdata02 = document.createElement("td");
+	trow2.appendChild(tdata02);
+	
+	var tdata02_value = document.createTextNode(countingTime());
+	tdata02.appendChild(tdata02_value);
+	
+	var tdata03 = document.createElement("td");
+	trow2.appendChild(tdata03);
+	
+	var t3 = document.createAttribute("class");
+	t3.value = "t3";
+	tdata03.setAttributeNode(t3);
+	
+		function countingSlots(){
+		var eventadmin_info=JSON.parse(localStorage.getItem('createEventsData'));	
+		var valid=false;
+		for (var k=0; k<eventadmin_info.length ;k++){
+		
+		{valid=true;}
+		if (valid){
+		var storedslots = eventadmin_info[k].Eventslots;
+			if (storedslots <= 0) {
+				
+				storedslots = document.createTextNode('0 | All slots filled');
+				tdata03.appendChild(storedslots);
+				}
+					localStorage.setItem('createEventsData',JSON.stringify(eventadmin_info));
+		return storedslots;
+					}
+				}		
+		}
+	
+	var tdata03_value = document.createTextNode(countingSlots());
+	tdata03.appendChild(tdata03_value);
+	
+	
+	
+	var changableslots1 = document.createAttribute("id");
+	changableslots1.value = "changableslots1";
+	tdata03.setAttributeNode(changableslots1);
+		
+	
+	document.getElementById("slots").appendChild(table);
+	
+	var tablearrange = document.createAttribute("class");
+	tablearrange.value = "table";
+	table.setAttributeNode(tablearrange);
+	
+		
+	var MoreDetails = document.createElement("button");
+	
+	var MoreDetailsAttri = document.createAttribute("class");
+	MoreDetailsAttri.value = "button";
+	MoreDetails.setAttributeNode(MoreDetailsAttri);
+	
+	var MoreDetailsAttri2 = document.createAttribute("onclick");
+	MoreDetailsAttri2.value = "location.href='event_display.html'"
+	MoreDetails.setAttributeNode(MoreDetailsAttri2);
+	
+	var MoreDetails_text = document.createTextNode(">>> View more details about EVENTS  <<<");
+	MoreDetails.appendChild(MoreDetails_text);
+	document.getElementById("slots").appendChild(MoreDetails);
+
+
+   }
+
+	mevent();
+   	
+	document.getElementById("latestevent").innerHTML = countingEventName();
+	
+	function reload() {
+    location.reload();
+	}
+	
+	
+	
+  </script>
+  
+  
+  <!-- Countdown Script -->
+	<script>
+     var eventadmin_info = localStorage.getItem("createEventsData");
+	    eventadmin_info = JSON.parse(eventadmin_info);
+		
+	// Set the date we're counting down to : Tze Keat's first added event 
+	var EDateTime = eventadmin_info[0].Eventdatetime;
+   
+	 var countDownDate = new Date(EDateTime).getTime();
+	 
+	
+	// Update the count down every 1 second 
+	var Counter = setInterval(function() {
+		
+		// Get todays date and time
+		var now = new Date().getTime();
+		
+		// Find the distance between now and the count down date 
+		var distance = countDownDate - now ;
+		
+		
+		
+		// Time calculations for days, hours, minutes and seconds
+		 // distance is the time stored in a mass of milliseconds.
+		 // Modulo % to get the remaining time
+		 // Divide by respective time area to get for days, hours, minutes and seconds respectively
+		 // Mathfloor to round down the numbers and get only the integer.
+		 var days = Math.floor(distance / ( 1000 * 60 * 60 * 24 ) );
+		 var hours = Math.floor( (distance % ( 1000 * 60 * 60 * 24 ) ) / (1000 * 60 * 60) );
+		 var minutes = Math.floor( (distance % ( 1000 * 60 * 60 ) ) / ( 1000 * 60 ) );
+		 var seconds = Math.floor( (distance % ( 1000 *  60 ) ) / ( 1000 ) );
+		 
+		// Output result 
+
+		var clock = document.getElementById("clockdiv");
+		var daysSpan = document.getElementById('days');
+		var hoursSpan = document.getElementById('hours');
+		var minutesSpan = document.getElementById('minutes');
+		var secondsSpan = document.getElementById('seconds');
+		daysSpan.innerHTML = days; 
+		hoursSpan.innerHTML = hours;
+		minutesSpan.innerHTML = minutes;
+		secondsSpan.innerHTML = seconds;
+		
+
+	});
+	
+	
+	
+  </script>
+
+  
+  <div class=" container border textz margintop">
+    
+	<div class="col-md-4 " style="padding-bottom:10%;">
+      <h2 class="title">More about GreenFuture </h2>
+      <p>
+        " At their core, organisations are just a giant network of relationships. So if you fail to build those relationships, your chances of succeeding are not very high. " This is a quote borrowed from Quote Master, and these words define our very purpose
+        and who we strive to become.
+        <br>
+        <br>
+        <a href="MoreaboutGreenFuture.html">More details <span style="color:black;">>>><br><img src="Images/environmentball.jpg" alt="ball" style="margin:auto;"></span></a>
+      </p>
+    </div>
+
+
+    <div class="col-md-4 " style="padding-bottom:10%;">
+      <h2 class="title textz"> Story of Claire</h2>
+      <p>
+        Claire grew up as a kid in an environment that was dire and without much greenery - A place almost seemingly like a wasteland. As she grew older and matures more, she took up voluntarily roles that were contributive to conserving nature and its beautiful greenery. When she completed and graduated...... 
+        <br>
+        <br>
+        <a href="StoryOfClaire.html">More details <span style="color:black;">>>><br><img src="Images/ClaireStory.jpg" alt="story" style="margin:auto;"></span></a>
+      </p>
+    </div>
+	
+    <div class="col-md-4 ">
+      <h2 class="title"> History and Achievements </h2>
+      <div id="chart" class="title"></div>
+      <br>
+      <p> <a href="HistoryandAchievements.html">More details <span style="color:black;">>>><br><img src="Images/environmenthistory.jpg" alt="history" style="margin:auto;"></span></a>
+    </div>
+  
+  </div>
+  
+  
+  <!-- Bar Chart jquery -->
+  <script type="text/javascript">
+	var eventadmin_info = localStorage.getItem("createEventsData");
+	    eventadmin_info = JSON.parse(eventadmin_info);
+	
+	
+	numJune = 5
+	numJuly = 5
+	numAugust = 5 
+	
+	
+	// Lack of time, function does not work properly.
+	function statisticschart(numJune, numJuly, numAugust) 	{
+	for (var z = 0; z < eventadmin_info.length; z++) {
+		var statisticsdata = eventadmin_info[z].eventmonth;
+		if (statisticsdata == '05') {
+			numJune += 1
+			
+			}
+		else if (statisticsdata == '06' ) {
+			numJuly += 1
+			
+			}
+		else if (statisticsdata == '07' ) {
+			numAugust += 1
+			
+			}
+		
+		return numJune, numJuly, numAugust;
+		
+		}
+	}
+	
+	
+		
+    jQuery(function($) {
+      $("#chart").shieldChart({
+        theme: "bootstrap",
+        exportOptions: {
+          image: false,
+          print: false
+        },
+        seriesSettings: {
+          bar: {
+            stackMode: "normal"
+          }
+        },
+        axisX: {
+          categoricalValues: [
+            "June", "July", "August"
+          ]
+        },
+        primaryHeader: {
+          text: " Events hosted by GreenFuture"
+        },
+        dataSeries: [{
+          seriesType: "bar",
+          collectionAlias: " Events hosted ",
+          data: [numJune, numJuly, numAugust]
+        }]
+      });
+    });
+  </script>
+
+  
+  
+  <div class=" container border textz margintop">
+    <h1 class="title"> TOGETHER WE CAN </h1>
+    <p>
+      We know that one organisation alone can’t affect the change we need. That’s why we rely on partnerships and our supporters. The changes we want to see in the world can only come about through the efforts of many people - together we can. </p>
+    <img src="Images/togetherwecan.jpg" alt="together" style="width:70%; margin:auto;">
+  </div>
+
+
+
+
+  <!-- Footer -->
+  <footer class="margintop">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+      <!-- Content -->
+
+        <h1 class="title">Building a community where hope burns with even more vigour.</h1>
+      
+     
+      <p style="font-size:130%; font-weight:bold;"> 
+	  Seek <span style="margin: 0% 10% 0% 10%">Strive </span>  Serve 
+      </p>
+	  <p class="col-md- fontsize"> <span> <a href="contactus.html">Contact Us</a> </span> </p>
+
+    </div>
+    <!-- Grid row -->
+
+  </footer>
+  <!-- Footer -->
+
+
+  
+  <!-- Scrollup -->
+  <div class="scrollup floating" style="display: block;">
+    <a href="#" style="display: block;">to Top</a>
+  </div>
+  <!-- Tree ' back to top ' jquery Script -->
+  <script>
+    $(document).ready(function() {
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+          $('.scrollup').fadeIn();
+        } else {
+          $('.scrollup').fadeOut();
+        }
+      });
+      $('.scrollup').click(function() {
+        $("html, body").animate({
+          scrollTop: 0
+        }, 600);
+        <!-- 600 represents the speed of scrolling up -->
+        return false;
+      });
+    });
+  </script>
+
+  <!-- css for tree ' back to top ' scroll up -->
+  <style>
+    .scrollup {
+      width: 200px;
+      height: 200px;
+      position: fixed;
+      bottom: 30px;
+      right: 10px;
+      text-indent: -9999px;
+      /* Indent ' to Top ' text from line 225, to extreme left to hide the words */
+      z-index: 9999px;
+      /* Highest stack, will always appear infront of other codes */
+      background: url('Images/BacktoTop.png') no-repeat;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+
+    .floating {
+      animation-name: Floatingx;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      margin-left: 30px;
+      margin-top: 5px;
+    }
+
+
+    @keyframes Floatingx {
+      from {
+        bottom: 0px;
+      }
+      65% {
+        bottom: 15px;
+      }
+      to {
+        bottom: -0px;
+      }
+    }
+  </style>
+  
+ <script>
+ var admin = sessionStorage.getItem("admin");
+var admin = JSON.parse(admin);
+var sadmin = admin;
+
+var str = document.getElementById("sadmin").innerHTML; 
+var res = str.replace("Welcome", sadmin);
+document.getElementById("sadmin").innerHTML = res;
+
+if (document.getElementById("sadmin").innerHTML != "null") {
+	var nbar = document.getElementById("nnbar");
+	var str1 = document.getElementById("reg").innerHTML; 
+	var res1 = str1.slice(50);
+	document.getElementById("reg").innerHTML = res1;
+
+	var str2 = document.getElementById("log").innerHTML; 
+	var res2 = str2.slice(50);
+	document.getElementById("log").innerHTML = res2;
+}
+
+document.addEventListener("DOMContentLoaded",docIsReady);
+var sucommittee; 
+
+function docIsReady(){
+	sucommittee = localStorage.getItem("sucommittee");
+ 
+	if (sucommittee == null){
+		sucommittee = [];
+	}
+	else {	
+		sucommittee = JSON.parse(sucommittee);
+	}
+	}
+
+function committee() {
+var admin = sessionStorage.getItem("admin");
+var admin = JSON.parse(admin);
+var sadmin = admin;
+var info = localStorage.getItem("student_info");
+var info = JSON.parse(info);
+for (var i = 0; i < info.length; i++){
+		var storedadmin = info[i].admin;
+		if (storedadmin == sadmin){
+			var sname = info[i].name;
+			var sadmin = info[i].admin;
+			var sphone = info[i].phone;
+			var fcommittee = {"sname":sname,"sadmin":sadmin,"sphone":sphone};
+			sucommittee.push(fcommittee);
+			localStorage.setItem("sucommittee",JSON.stringify(sucommittee));
+			}
+			}
+}
+ </script>
+</body>
+</html>

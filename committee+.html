@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title></title>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<style>
+
+fieldset {border-color:rgb(0, 255, 204);
+		  border-style:solid;
+		  margin:25px 20px 25px 20px;
+		  }
+
+form {background-color:white;
+	  padding:auto;
+	  height:auto;
+	  width:700px;
+	  margin:14% auto;
+	  } 
+
+#sub {margin-bottom:3%}	  
+	  
+.put {width:500px;}
+
+.word {font-size:85%;}
+	  
+* {margin:15px;
+   font-family:Arial;}
+   
+body {
+background: url(https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=350);
+background-repeat: repeat;
+background-size: 100%;
+}	
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded",docIsReady);
+var committeee_info; 
+
+function docIsReady(){
+	committeee_info=localStorage.getItem("committee_info");
+ 
+	if (committeee_info==null){
+		committeee_info=[];
+	}
+	else {	
+		committeee_info=JSON.parse(committeee_info);
+	}
+	}
+	
+function addToStorage() {
+	var name = document.getElementById("name").value;
+	var admin = document.getElementById("admin").value;
+	var contact = document.getElementById("contact").value;
+	var info = {"name":name,"admin":admin,"contact":contact};
+	committeee_info.push(info);
+	localStorage.setItem("committeee_info",JSON.stringify(committeee_info));
+	}
+
+</script>
+</head>
+<body>
+<form onsubmit="addToStorage()">
+<fieldset>
+<h2>Welcome to Green Future Family !</h2>
+<b class="word">Feel happy helping the environment ? Join us in making effort to conserve the environment.<br>
+<i class="word">"The Greatest Threat to Our Planet is The Belief That Someone Else Will Save It" ~Robert Swan</i><br></b>
+
+	<input id="name" class="put" placeholder="Your Name" type="text" tabindex="1" required autofocus /><br>
+	<input id="admin" class="put" placeholder="Admin No." type="text" tabindex="2" required autofocus /><br>
+	<input id="contact" class="put" placeholder="Your Phone Number" type="tel" minlength="8" maxlength="8" tabindex="4" required /><br>
+	<input id="sub" type="submit" value="Submit" tabindex="11">
+</fieldset>
+</form>
+</body>
+</html>

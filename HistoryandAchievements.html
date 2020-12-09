@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>History and Achievements</title>
+
+<!-- Font link(s) -->
+<link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+
+<!-- CSS links -->
+<link rel="stylesheet" type="text/css" href="css/css.css"/>
+<link rel="stylesheet" type="text/css" href="css/cssnav.css"/>
+
+<!-- Bootstrap links -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+<!-- shieldui css and js assets in order for the charts to work -->
+<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+ 
+</head> 
+
+<body>
+ <header>
+    <nav>
+      <div class="container-full">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+	   <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="spacez" id="homez" style="background-color:#47d1d1; border-radius:8px; "><a href="GreenFutureHomepage.html">Home</a></li>
+            <li class="spacez navigatingitems"><a href="eventsnavpage.html" onclick=>Events</a></li>
+            <li class="spacez navigatingitems"><a href="home.html">Product Sales</a></li>
+            <li class="spacez navigatingitems"><a href="DIY Section.html">DIY Section</a></li>
+            <li class="spacez registerz"><a href="member.html">REGISTER</a></li>
+            <li class="spacez loginz"><a href="login.html">LOG IN</a></li>
+			
+			<!-- Zi Xiang's template -->
+			<li class="dropdown registerz spacez"><a class="dropdown-toggle"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span id="suser" class="welcome">Welcome</span><span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Profile</a></li>
+			  <li><a href="#">View Past Transactions</a></li>
+			  <li><a href="#">View Past Events</a></li>
+			  <li onclick="logout()"><a href="#">Log Out</a></li>
+			</ul>
+
+
+          </ul>
+          <!-- Main Navigation -->
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
+  </header>
+<div class="container border textz margintop">
+<h1 class="title"> History and Achievements </h1>
+				<div id="chart" class="title"></div>
+				<p>
+                The GreenFuture has sent athletes to every celebration of the modern Green Games, 
+                except the 1980 Summer Olympics, during which it led a boycott. 
+                The Green Olympic Committee (GOC) is the National Olympic Committee for the GreenFuture.
+            </p>
+            <br />
+            <p>
+                GreenFuture athletes have won a total of some medals at the Summer Olympic Games and another others at the Winter Olympic Games. 
+                Most medals have been won in athletics (track and field) (some, some%) and swimming (others, others%). 
+                Thomas Burke was the first athlete to represent the GreenFuture at the Olympics. 
+                He took first place in both the 100 meters and the 400 meters of the 1896 Summer Olympics in Athens, Greece. 
+                GreenFuture athlete Michael Phelps is the most-decorated Olympic athlete of any nation, with a lot of Olympic medals (including many golds).
+				<br>
+				<br>
+				<button onclick="goBack()">Back to Home <span style="color:black;">>>></span></button> 
+				<br>
+				</p>
+				
+</div>
+
+<!-- Scrollup -->
+<div class="scrollup floating" style="display: block;">
+<a href="#" style="display: block;">to Top</a> 
+</div>
+<!-- Tree ' back to top ' jquery Script -->
+<script>
+  $(document).ready(function () {
+ $(window).scroll(function () {
+	 if ($(this).scrollTop() > 100)    {$('.scrollup').fadeIn();} 
+	 else 							  {$('.scrollup').fadeOut();}
+ });
+$('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+<!-- 600 represents the speed of scrolling up -->
+        return false;
+    });
+});
+</script>
+
+<!-- css for tree ' back to top ' scroll up -->
+ <style>
+ 
+
+.scrollup {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    text-indent: -9999px; 
+	/* Indent ' to Top ' text from line 225, to extreme left to hide the words */
+	z-index:9999px;
+	/* Highest stack, will always appear infront of other codes */
+    background: url('BacktoTop.png') no-repeat;
+ background-size: contain;    cursor:pointer;
+}
+
+
+.floating{
+    animation-name: Floatingx;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+
+@keyframes Floatingx {
+    from {bottom:0px;}
+    65% { bottom:15px;}
+    to { bottom:-0px; }    
+}
+    
+	
+  </style>
+
+ <!-- Bar Chart jquery -->
+  <script type="text/javascript">
+	var eventadmin_info = localStorage.getItem("createEventsData");
+	    eventadmin_info = JSON.parse(eventadmin_info);
+	
+	
+	numJune = 5
+	numJuly = 5
+	numAugust = 5 
+	
+	
+	// Lack of time, function does not work properly.
+	function statisticschart(numJune, numJuly, numAugust) 	{
+	for (var z = 0; z < eventadmin_info.length; z++) {
+		var statisticsdata = eventadmin_info[z].eventmonth;
+		if (statisticsdata == '05') {
+			numJune += 1
+			
+			}
+		else if (statisticsdata == '06' ) {
+			numJuly += 1
+			
+			}
+		else if (statisticsdata == '07' ) {
+			numAugust += 1
+			
+			}
+		
+		return numJune, numJuly, numAugust;
+		
+		}
+	}
+	
+	
+		
+    jQuery(function($) {
+      $("#chart").shieldChart({
+        theme: "bootstrap",
+        exportOptions: {
+          image: false,
+          print: false
+        },
+        seriesSettings: {
+          bar: {
+            stackMode: "normal"
+          }
+        },
+        axisX: {
+          categoricalValues: [
+            "June", "July", "August"
+          ]
+        },
+        primaryHeader: {
+          text: " Events hosted by GreenFuture"
+        },
+        dataSeries: [{
+          seriesType: "bar",
+          collectionAlias: " Events hosted ",
+          data: [numJune, numJuly, numAugust]
+        }]
+      });
+    });
+  </script>
+  
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+</html>

@@ -1,0 +1,141 @@
+body { 
+text-align:center;
+background: url(../Images/bodybackground.jpg) no-repeat center fixed;
+background-size: cover;
+}
+
+
+.border {
+background-color:rgb(220, 240, 250,0.9);
+box-shadow:1px 3px #dcf0f8;
+border: 3px solid #dcf0fa; 
+border-radius: 20px;
+}
+
+
+
+
+
+.greeninline {
+color:#00cc44; 
+text-shadow:1px 1px; 
+
+
+}
+
+.texty {
+color:#9400D3;
+font-weight:bold;
+font-size:170%;
+}
+
+.textz {
+color:#696969;
+font-weight:bolder;
+font-size:150%;
+
+}
+
+.registery > a:hover {
+color:#FF7F50;
+text-shadow: 3px 6px 4px;
+text-decoration:none;
+}
+	
+
+.carouseldisplay {  
+box-shadow:1px 3px #dcf0f8;
+border: 3px solid #dcf0fa; 
+border-radius: 1px;
+height:250px;
+display: block;
+}
+
+
+.carousel-inner > .item > img {
+    margin:auto;
+	}
+
+	
+.jcarousel, .jcarousel img  {
+    max-width: 100%;
+    height: auto ;
+}
+
+
+.margintop {
+margin-top:1%;
+}
+
+.countdown {
+font-weight: 100;
+font-size: 40px;
+margin: 40px 0px 20px;
+}
+
+#clockdiv {
+display: inline-block;
+font-weight: 100;
+text-align: center;
+font-size: 30px;
+}
+
+#clockdiv > div{
+	padding: 10px;
+	border-radius: 3px;
+	background: #87ceeb;
+	display: inline-block;
+}
+
+#clockdiv div > span{
+	padding: 15px;
+	border-radius: 3px;
+	background: #dcf0fa;
+	display: inline-block;
+}
+
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
+}
+
+.title{
+font-weight:bold;
+color:#000000;
+}
+
+.table{
+border-collapse:collapse;
+margin:auto;
+}
+
+th, td { 
+border:2px solid #87ceeb;
+text-align:center !important;
+
+}
+
+.t3 {
+color:grey;
+}
+
+.fontsize {
+	font-size:130%;
+	font-weight:bolder;
+}
+
+.button {
+    background-color:#87ceeb;
+	border:1px solid #87ceeb;
+    border-radius: 20px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	font-weight:bold;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+

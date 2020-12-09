@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Shop Item - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+	</head>
+	
+<body>
+<script>
+var productInfoList=[]
+					
+function displayResult(){
+	    if (localStorage["productInfo"]){
+			productInfo=JSON.parse(localStorage["productInfo"]);
+		}
+		else {
+			productInfo=productInfoList;
+		}
+		for (var i=0; i<productInfo.length; i++){
+			addToList(productInfo[i]);
+		}	
+	}
+function addToList(product) {
+		var productItem=document.createElement("tr");
+		document.getElementById("result").appendChild(productItem);
+		var td1=document.createElement("td")
+		td1.innerText=product["name"];
+		productItem.appendChild(td1);
+		var td2=document.createElement("td")
+		td2.innerText=product["price"];
+		productItem.appendChild(td2);
+		var td3=document.createElement("td")
+		td3.innerText=product["Description"];
+		productItem.appendChild(td3);
+		var td4=document.createElement("td")
+		td4.innerText=product["category"];
+		productItem.appendChild(td4);
+		var td5=document.createElement("td")
+		td5.innerText=product["Effort"];
+		productItem.appendChild(td5);	
+	}
+function addToRecords(){
+		var productInfo;
+		if (localStorage["productInfo"]){
+			productListRecords=JSON.parse(localStorage["productInfo"]);
+		}
+		else {
+			productInfo=productInfoList;
+		}
+		productInfo.push(localStorage["productInfo"]=JSON.stringify(productInfo));
+		
+		
+	}
+</script>
+<table id="result" style="width:100%;border:1px solid black;">
+<tr>
+<th>Product Name</th>
+<th>Price</th>
+<th>Description</th>
+<th>Category</th>
+<th>Effort</th>
+</tr>
+
+</table>
+
+<script>
+displayResult();
+</script>
+</body>
+</html>

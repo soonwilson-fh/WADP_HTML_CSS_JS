@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title></title>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<style>
+body{
+background: url(https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=350) center fixed;
+background-repeat: no-repeat;
+background-size: cover
+}
+
+form {background-color:white;
+	  padding:auto;
+	  height:auto;
+	  width:700px;
+	   margin: 14% auto;
+	  
+	 
+	  } 
+
+#sub {margin-bottom:30px}	  
+	  
+.put {width:500px;}
+
+.word {font-size:85%;}
+	  
+* {margin:15px;
+   font-family:Arial;}
+</style>
+<script> 
+document.addEventListener("DOMContentLoaded",docIsReady);
+var student_info_events; 
+
+function docIsReady(){
+	student_info_events=localStorage.getItem("student_info_events");
+ 
+	if (student_info_events==null){
+		student_info_events=[];
+	}
+	else {	
+		student_info_events=JSON.parse(student_info_events);
+	}
+	}
+
+</script>
+</head>
+<body>
+<div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+    </div>
+    <div class="col">
+    </div>
+  </div>
+<form onsubmit="addToStorage(); addToSelect();">
+<h2>We welcome you to join us for our event!</h2>
+<b class="word">Feel happy helping the environment ? Join us in making effort to conserve the environment.<br></b>
+
+	<input class="put" id="name_events" placeholder="Your Name" type="text" tabindex="1" required autofocus /><br>
+	<input class="put" id="admin_events" placeholder="Admin No." type="text" tabindex="2" required autofocus /><br>
+	<input class="put" id="contact_events" placeholder="Your Phone Number" type="tel" minlength="8" maxlength="8" tabindex="3" required /><br>
+	<select id="events_events">
+    <option value="events" tabindex="4">events</option>
+</select>
+
+	<input id="sub" type="submit" value="Submit"  tabindex="5" onclick='counter();validation();'>
+</form>
+</body>
+<script>
+info1=localStorage.getItem('createEventsData');
+var info1=JSON.parse(info1);
+var events_events = document.getElementById('events_events');
+	for (var i = 0; i < info1.length; i++){
+var storedname=info1[i].Eventname;
+newOption = document.createElement('option');
+newOption.innerHTML=storedname;
+events_events.appendChild(newOption);
+}	
+function counter(){
+if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+       
+}
+}
+function save(){
+
+	 	var name_events = document.getElementById("name_events").value;
+	var admin_events = document.getElementById("admin_events").value;
+	var contact_events = document.getElementById("contact_events").value;
+	var events_events=document.getElementById("events_events").value;
+	var info = {"name_events":name_events,"admin_events":admin_events,"contact_events":contact_events,"events_events":events_events};
+	student_info_events.push(info);
+	localStorage.setItem("student_info_events",JSON.stringify(student_info_events));
+	alert('Thanks for signing up');
+	}
+
+	function validation(){
+	
+if (localStorage.clickcount<2)
+{
+save();
+}
+else if (localStorage.clickcount >=2){
+
+var admin=document.getElementById('admin_events').value;
+var event=document.getElementById('events_events').value;
+var valid=false;
+info=localStorage.getItem("student_info_events");
+info=JSON.parse(info);
+for (var i=0; i<info.length;i++){
+var storedadmin=info[i].admin_events;
+var storedevents=info[i].events_events;
+if(admin==storedadmin && event==storedevents){
+     {valid=true;}
+	 if (valid) {
+	 alert(' You have  signed up');
+	 location.reload();
+	 return true;
+	}
+		else if (admin != storedadmin || storedevents != storedevents)
+	{ 
+	continue;
+	}
+	
+	}
+	}
+	if (!valid) {
+	 save();
+	}
+
+	
+	}
+}
+
+
+    
+
+
+</script>
+</html>

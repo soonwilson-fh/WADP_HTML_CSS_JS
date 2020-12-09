@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<link rel="stylesheet" type="text/css" href="css/event1.css"/>
+<link rel="stylesheet" type="text/css" href="css/css.css"/>
+<link rel="stylesheet" type="text/css" href="css/cssnav.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+
+<!--internal css for event page-->
+.class {
+    color: green;
+}
+header { 
+background-color:#33cccc;
+}
+
+#space0, .space, .login, .signup {
+margin-top: 10px;
+}
+
+.space, #space0 {
+margin-left:10px;
+margin-right:10px;
+}
+
+
+.space > a, #space0 > a {
+color:#262626;
+font-size:150%;
+}
+
+
+.login > a, .signup > a {
+
+color:#262626;
+font-size:130%;
+font-weight:bolder;
+}
+
+.signup > a {
+
+float:left;
+}
+
+
+.login > a {
+float:right;
+}
+
+
+.login > a:hover, .space > a:hover, .signup > a:hover {
+background-color:#33cccc !important;
+}
+
+
+#space0 > a:hover, .space > a:hover { 
+color:white; 
+text-shadow: 3px 6px 4px;
+}
+
+.login > a:hover, .signup > a:hover {
+color:#FF7F50;
+text-shadow: 3px 6px 4px;
+}
+
+#space0 > a:hover {
+background-color:#47d1d1 !important;
+}
+
+.icon-bar { 
+    background-color:#808080;
+}
+
+
+.navbar-toggle .icon-bar+.icon-bar {
+    margin-top: 4px;
+}
+
+
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+}
+
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+	background-color:transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+
+.navbar-toggle:hover {
+	background-color:#e6e6e6;
+}
+
+
+.jcarousel img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+}
+
+
+.home { 
+margin-top:0px; 
+}
+</style>
+<title>
+Events
+</title>
+
+</head>
+
+<body onload="showTable()" >
+<header> 
+	<nav>
+<div class="container-full">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" >
+	   <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+    	<ul class="nav navbar-nav">
+    		<li id="space0" style="background-color:#47d1d1; border-radius:8px;  "><a href="WireframeHomepage.html">Home</a></li>
+    		<li class="space"><a href="Events" onclick=>Events</a></li>
+    		<li class="space"><a href="Product Sales">Product Sales</a></li>
+    		<li class="space"><a href="DIY Section">DIY Section</a></li>
+			<li class="signup"><a href="Sign Up">REGISTER</a></li>
+			<li class="login"><a href="Login">LOG IN</a></li>
+						
+    	</ul>
+    </div><!--/.nav-collapse -->
+</div>
+	</nav>
+</header>
+<br>
+<center><h1>Events</h1></center>
+<button><a href="eventsAdmin.html">Click here to register the events</a></button>
+<br>
+<br>
+<br>
+<div id="selection">
+<table id="displayEventOnTable" style="width:90%" onload="showEvents">
+  
+</table>
+</div>
+
+<script>
+/*This function is to store the static data */
+/* same for the locals */
+var test = [];
+
+function local() {
+var form = {};
+form.name = document.getElementById('name').innerText;
+form.date = document.getElementById('date').innerText;
+form.location = document.getElementById('locations').innerText;
+form.time =  document.getElementById('time').innerText;
+test.push(form);
+
+localStorage.setItem("form", JSON.stringify(test));
+
+displayTable();
+}
+
+/* create a function to display the createEventData TABLE from the createEvent.html */
+ 
+ 
+/* Getting data from the creating events*/
+
+var showEventss = JSON.parse(localStorage.getItem('createEventsData'));
+
+
+/*Create table function for createEventTable */
+
+function showTable(){
+	
+
+	if (showEventss){
+		var thetable = document.getElementById("displayEventOnTable");
+		var numOfRow=thetable.rows.length;
+		for(var j=0; j < numOfRow ; j++)
+		{
+			thetable.deleteRow(0);
+		}
+		for (var i=showEventss.length; i>0;i--)
+		{
+			var row=thetable.insertRow(0);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var cell4 = row.insertCell(3);
+			var cell5 = row.insertCell(4);
+			var cell6 = row.insertCell(5);
+			
+			cell1.innerHTML = showEventss[i-1].name;
+			cell2.innerHTML = showEventss[i-1].date;
+			cell3.innerHTML = showEventss[i-1].place;
+			cell4.innerHTML = showEventss[i-1].timing;
+			cell5.innerHTML = showEventss[i-1].eventIC;
+			cell6.innerHTML = showEventss[i-1].description;
+			
+		}
+		
+		var table=document.getElementById("displayEventOnTable");
+		var row = table.insertRow(0);
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		var cell4 = row.insertCell(3);
+		var cell5 = row.insertCell(4);
+		var cell6 = row.insertCell(5);
+		cell1.innerHTML = "Name";
+		cell2.innerHTML = "Date";
+		cell3.innerHTML = "Location";
+		cell4.innerHTML = "Timing";
+		cell5.innerHTML = "Event IC";
+		cell6.innerHTML = "Description";
+		
+		
+		
+	}
+}
+
+
+
+
+</script>
+</body>
+</html>

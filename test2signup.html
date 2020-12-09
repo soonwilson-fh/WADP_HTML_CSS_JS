@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title></title>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<style>
+body{
+background: url(https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=350) center fixed;
+background-repeat: no-repeat;
+background-size: cover
+}
+
+.hi{
+  text-align: center;
+  margin-top:16%;
+}
+
+</style>
+<script> 
+document.addEventListener("DOMContentLoaded",docIsReady);
+var student_info_events; 
+
+function docIsReady(){
+	student_info_events=localStorage.getItem("student_info_events");
+ 
+	if (student_info_events==null){
+		student_info_events=[];
+	}
+	else {	
+		student_info_events=JSON.parse(student_info_events);
+	}
+	
+	var info =localStorage.getItem("createEventsData");
+	
+	if (info==null) {
+		info=[];
+	}
+	else{
+		info=JSON.parse(info);
+	}
+}
+
+</script>
+</head>
+<body onload='test1(),counting()'>
+<h2 class='hi' style='color:white'>Thanks for playing a part to save our environment!</h2>
+
+</body>
+<script>
+x= prompt('Type in the ID of the event you want to sign up.');
+var createEventsData=JSON.parse(localStorage.getItem('createEventsData'));	
+
+function counting(){
+var createEventsData=JSON.parse(localStorage.getItem('createEventsData'));	
+var valid=false;
+for (var k=0; k<createEventsData.length ;k++){
+if (x==createEventsData[k].EventID){
+{valid=true;}
+if (valid){
+var storedslots = createEventsData[k].Eventslots;
+createEventsData[k].Eventslots = storedslots-1;
+var storedslots = createEventsData[k].Eventslots;
+
+			localStorage.setItem('createEventsData',JSON.stringify(createEventsData));
+return true;
+			}
+		}		
+	}
+}
+
+
+
+
+function test1(){
+var valid=false;
+
+for (var i=0; i<createEventsData.length;i++){
+var storedeventsid=createEventsData[i].EventID;
+if(x==storedeventsid){
+     {valid=true;}
+	 if (valid) {
+	 alert('You have registered for the event!');
+	 saving();
+	 return true;
+	}
+		else if (x!=storedeventsid)
+	{ 
+	continue;
+	}
+	
+	}
+	}
+	if (!valid) {
+	 alert('Event ID does not exist.');
+	}
+
+	}
+	
+function saving() {
+var useradmin = sessionStorage.getItem("admin");
+var useradmin = JSON.parse(useradmin);
+var uadmin = useradmin;
+
+var info1 = localStorage.getItem("student_info");
+var info1 = JSON.parse(info1);
+for (var i = 0; i < info1.length; i++){
+		var storedadmin = info1[i].admin;
+		if (uadmin==storedadmin) {
+		var storedname=info1[i].name;
+		var storedphone=info1[i].phone;
+		var student_information = {"storedname":storedname,"storedphone":storedphone,'storedadmin':storedadmin};
+		}
+
+	}
+	
+for (var j=0; j<createEventsData.length;j++){
+var storedeventsid=createEventsData[j].EventID;
+if(x==storedeventsid){
+var storedeventsdate=createEventsData[j].Eventdate;
+var storedeventsname=createEventsData[j].Eventname;
+var event_information={'storedeventsid':storedeventsid,'storedeventsdate':storedeventsdate,'storedeventsname':storedeventsname};
+}
+else {
+continue;
+	}	
+}
+var validating=true;
+var information={'student_information':student_information,'event_information':event_information};
+
+student_info_events.push(information);
+localStorage.setItem("student_info_events",JSON.stringify(student_info_events));
+}
+
+
+</script>
+</html>

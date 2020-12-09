@@ -1,0 +1,454 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Second Hand</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="sale.css">
+  
+  <style>
+  <!--Limit picture size when uploaded-->
+  rounded-circle mx-auto img-thumbnail {
+  width: 300px;
+  height: 300px;
+  }
+  <!--Panels same size-->
+	.panel-body  {
+  width:300px;
+  height:300px;
+  max-width:300px;
+  max-height:300px;
+  min-width:300px;
+  min-height:300px;
+  } 	 
+
+
+  .input{
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  color:green;
+}
+<!--adjusts the navbar-->
+.navbar {
+    margin-bottom: 50px;
+    border-radius: 0;
+}
+    
+<!-- Remove the jumbotron's default bottom margin--> 
+.jumbotron {
+    margin-bottom: 0;
+   }
+   
+#greenlogo{
+	position: relative; top: -12px;
+	}
+
+
+	
+header { 
+	background-color:#33cccc ;
+	}
+
+#space0, .space, .login, .signup {
+	margin-top: 10px;
+}
+
+.space, #space0 {
+	margin-left:10px;
+	margin-right:10px;
+}
+
+
+.space > a, #space0 > a {
+	color:#262626;
+	font-size:150%;
+}
+
+
+.login > a, .signup > a {
+
+	color:#262626;
+	font-size:130%;
+	font-weight:bolder;
+}
+
+.signup > a {
+
+	float:left;
+}
+
+
+.login > a {
+	float:right;
+}
+
+
+.login > a:hover, .space > a:hover, .signup > a:hover {
+	background-color:#33cccc !important;
+}
+
+
+#space0 > a:hover, .space > a:hover { 
+	color:white; 
+text-shadow: 3px 6px 4px;
+}
+
+.login > a:hover, .signup > a:hover {
+	color:#FF7F50;
+text-shadow: 3px 6px 4px;
+}
+
+#space0 > a:hover {
+	background-color:#47d1d1 !important;
+}
+
+.icon-bar { 
+    background-color:#808080;
+}
+
+
+.navbar-toggle .icon-bar+.icon-bar {
+    margin-top: 4px;
+}
+
+
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+}
+
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+	background-color:transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+
+.navbar-toggle:hover {
+	background-color:#e6e6e6;
+}
+
+
+
+  </style>
+  <script>
+  <!--Duplicate template-can try use to create uploaded div-->
+ var button=document.createElement("button");
+  function getTemplate(){
+	/*var div=document.createElement("div");
+	div.innerHTML=document.getElementById("tem1").innerHTML;
+	document.getElementById("templates").appendChild(div);
+	}*/ 
+	var place=document.getElementById("uploadhere")
+	document.getElementById("tem1").style.display="block";
+	button.innerHTML="Hide";
+	button.onclick=function hide(){document.getElementById("tem1").style.display="none", place.removeChild(button)};
+	place.appendChild(button);
+	}
+	<!--Delete template-->
+ function delTemplate(){
+	 var div = document.getElementById("templates");
+     div.removeChild(div.childNodes[0]);	
+		}
+<!----------------------------------------------------------------->	
+	
+	<!--Upload Image scripts-->
+     function loadImage(e) {
+	    var file=e.target.files[0];	
+		if (isImageFile(file.name)) {
+			readImageAndDisplay(file,document.getElementById("myPhoto"));			
+		}
+	 }
+	 
+	 function isImageFile(str){
+		if (str.match(/.jpg/)||str.match(/.png/)||str.match(/.gif/)||str.match(/.jfif/)||str.match(/.jpeg/)){
+		  return true;
+		  }
+		else{
+		  return false;
+		  }
+	 }
+	 
+	 function readImageAndDisplay(readFile,dest){
+		var reader = new FileReader();
+		reader.readAsDataURL(readFile);
+		reader.onload = function(imgsrc){
+			var base64Img=imgsrc.target.result;
+			dest.src=imgsrc.target.result;
+		}
+	 }
+	 
+	 
+	 
+	 
+	/* local storage */
+	document.addEventListener("DOMContentLoaded",docIsReady);
+	function docIsReady(){
+	createProductsData=localStorage.getItem("createProductsData");
+	if (createProductsData==null) {
+		createProductsData=[];
+	}
+	else{
+		createProductsData=JSON.parse(createProductsData);
+	}
+	}
+	function createproductRecord(){
+		var product={};
+		var name=product["name"]=document.getElementById("name").value;
+		var price=product["price"]=document.getElementById("price").value;
+		var image=product["image"]=document.getElementById("myPhoto").src;
+		var category=product["category"]=document.getElementById("class").value;
+		var contact=product["contact"]=document.getElementById("contact").value;
+		var info= {'name':name,'price':price,'image':image,
+		'category':category,'contact':contact};
+		createProductsData.push(info);
+		localStorage.setItem('createProductsData',JSON.stringify(createProductsData));
+		create(product);
+	}
+<!--create updated-->
+	function create(record){
+		var location=document.getElementById("templates");
+		var name=record["name"];
+		var price=record["price"];
+		var phoproduct=record["image"];
+		var category=record["category"];
+		var contact=record["contact"];
+		/*if class==="second hand" {	*/
+		var div0=document.createElement("div");
+			div0.classList.add("col-sm-4");
+		var div=document.createElement("div");
+			div.classList.add("panel");
+			div.classList.add("panel-primary");
+		var div1=document.createElement("div");
+			div1.classList.add("panel-heading");
+		var div2=document.createElement("div");
+			div2.classList.add("panel-body");
+		var label=document.createElement("label");
+			label.classList.add("custom-file");
+		var img=document.createElement("img");
+			img.classList.add("img-responsive");
+		var div3=document.createElement("div")
+			div3.classList.add("panel-footer");
+		var div4=document.createElement("div");
+		/* if logged in */
+		var button=document.createElement("button");
+		button.innerHTML="Sold";
+		button.id="sold";
+		button.onclick=function remove(){ location.removeChild(div0)};
+		/*ends here*/
+		div4.classList.add("panel-footer");
+		div4.innerText="Contact info:"+contact;
+		div4.appendChild(button);
+		div1.innerText=name;
+		img.src=phoproduct;
+		div3.innerText="Price: $"+price;
+		label.appendChild(img);
+		div2.appendChild(label);
+		div.appendChild(div1);
+		div.appendChild(div2);
+		div.appendChild(div3);
+		div.appendChild(div4);
+		div0.appendChild(div);
+		location.appendChild(div0);
+		}
+	
+	
+	function admin(){
+	var buttonp=document.getElementById("+");
+	var buttonm=document.getElementById("-");
+	var password=prompt("Please Enter the password: ");
+	if (password =="asd"){
+		buttonp.style.display="block";
+		buttonm.style.display="block";
+	}
+	else{
+		alert("Wrong password! Please try again.")
+	}
+	}	
+	 
+    </script>
+</head>
+<body onload="showProduct()">
+<header> 
+	<nav>
+<div class="container-full">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" >
+	   <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+    	<ul class="nav navbar-nav">
+    		<li id="space0" style="background-color:#47d1d1; border-radius:8px;  "><a href="GreenFutureHomepage.html">Home</a></li>
+    		<li class="space"><a href="eventsnavpage.html" onclick=>Events</a></li>
+    		<li class="space"><a href="home.html">Product Sales</a></li>
+    		<li class="space"><a href="DIY Section.html">DIY Section</a></li>
+			<li class="signup"><a href="member.html">REGISTER</a></li>
+			<li class="login"><a href="login.html">LOG IN</a></li>
+			
+			<!-- Zi Xiang's template -->
+			<li class="dropdown signup"><a class="dropdown-toggle"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span id="suser">Welcome</span><span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Profile</a></li>
+			  <li><a href="#">View Past Transactions</a></li>
+			  <li><a href="#">View Past Events</a></li>
+			  <li onclick="logout()"><a href="#">Log Out</a></li>
+			</ul>
+      
+    	
+    	</ul><!-- Main Navigation -->
+    </div><!--/.nav-collapse -->
+</div>
+	</nav>
+</header>	
+
+
+
+<!-- MAIN PAGE -->
+<div class="jumbotron <!-- the big screen for the title and subtitle -->
+  <div class="container text-center">
+    <h1>GreenFuture Store</h1>      
+    <p>Contribute, Innovate & Create</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid"><!--navigation bar-->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img border="0" alt="Logo" src="Back to Top.png" width="50" height="50" id="greenlogo"></a>   <!-- Adds the logo beside the nav bar -->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">  <!-- inlines the list, turns font color to greyish ,removes underline and turns font white when hovered -->
+		<li class="space"><a href="home.html">Home</a></li>
+        <li class="space"><a href="Decorative.html">Decorations</a></li><!-- List of categories links to other pages-->
+        <li class="active space"><a href="#">Second Hand</a></li>
+        <li class="space"><a href="schooluse.html">School use</a></li>
+		<li class="space"><a href="selfie.html">Share your pictures!</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<!--SCRIPT BODY-->
+<script>
+var showProducts = JSON.parse(localStorage.getItem('createProductsData'));
+
+function showProduct(){
+	if (showProducts){
+		var location = document.getElementById("templates");
+		for (var i=showProducts.length; i>0;i--)
+		{
+		var name=showProducts[i-1].name;
+		var price=showProducts[i-1].price;
+		var phoproduct=showProducts[i-1].image;
+		var category=showProducts[i-1].category;
+		var contact=showProducts[i-1].contact;
+		var div0=document.createElement("div");
+			div0.classList.add("col-sm-4");
+		var div=document.createElement("div");
+			div.classList.add("panel");
+			div.classList.add("panel-primary");
+		var div1=document.createElement("div");
+			div1.classList.add("panel-heading");
+		var div2=document.createElement("div");
+			div2.classList.add("panel-body");
+		var label=document.createElement("label");
+			label.classList.add("custom-file");
+		var img=document.createElement("img");
+			img.classList.add("img-responsive");
+		var div3=document.createElement("div")
+			div3.classList.add("panel-footer");
+		var div4=document.createElement("div");
+		/* if logged in */
+		var button=document.createElement("button");
+		button.innerHTML="Sold";
+		button.id="sold";
+		button.onclick=function remove(){ location.removeChild(div0)
+			showProducts.splice(i,1);
+		localStorage.setItem('createProductsData',JSON.stringify(showProducts));};
+		/*ends here*/
+		div4.classList.add("panel-footer");
+		div4.innerText="Contact info:"+contact;
+		div4.appendChild(button);
+		div1.innerText=name;
+		img.src=phoproduct;
+		div3.innerText="Price: $"+price;
+		label.appendChild(img);
+		div2.appendChild(label);
+		div.appendChild(div1);
+		div.appendChild(div2);
+		div.appendChild(div3);
+		div.appendChild(div4);
+		div0.appendChild(div);
+		location.appendChild(div0);
+		}
+}
+}
+</script>
+
+
+<!--Product templates and products-->
+<button onclick="admin()">Admin Access</button>
+<div id="uploadhere">
+<button id="+"onclick="getTemplate()" style="display:none" "text-align:center">+</button>
+<button id="-"onclick="delTemplate()" style="display:none" "text-align:center">-</button>
+</div>
+<div class="container" id="con1">  
+ <div id="templates"> </div>  
+  <div class="row" id="tem1" style="display:none">
+         <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading"><input type="text" class="input" id="name" placeholder="Enter product name..."/></div>
+		<div class="panel-body"> <img id="myPhoto" src="" class="rounded-circle mx-auto img-thumbnail"/>
+		<input type="file" class="custom-file-input" onchange="loadImage(event)"/>
+        <div class="panel-footer" > <input type="text" id="price" placeholder="Enter the price..."/></div>
+		<br>
+		<input type="text" id="class" placeholder="Enter product category..."/><br>
+		<br>
+		<input type="text" id="contact" placeholder="Your contact info...")/>
+		<br><br>
+		<button onclick="createproductRecord()" type="button">Save info</button>
+		</div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  
+ 
+ 
+<!--
+<span> <div class="col-sm-4" style="display:none" id="problank"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading"></div> 
+        <div class="panel-body">
+		<label class="custom-file"><img src="" class="img-responsive" alt="Image"></div>
+        <div class="panel-footer"></div>
+      </div></span-->
+</body>
+</html>
+

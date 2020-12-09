@@ -1,0 +1,43 @@
+Documents 
+
+Carousel sources :
+( Carousel slideshow codes )
+1. https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_carousel&stacked=h
+
+
+
+Bar Charts source :
+( Bar Chart codes ) 
+1. http://www.prepbootstrap.com/bootstrap-template/responsive-column-chart
+
+
+
+( Google.com/Images ) 
+1. Lost
+2. Lost
+3. Lost
+4. Lost
+5. Lost
+6. History and Achievements picture : http://www.noorculturalcentre.ca/wp-content/uploads/2010/09/ihmc-lecture-main.jpg
+7. Claire's Story picture : https://kids.niehs.nih.gov/assets/images/stories/sharon_environment/sharoncov_500x489.jpg
+8. More about GreenFuture picture : http://www.hitachi.com/environment/images/sitetop/pickup_vision.jpg
+9. Introduction picture : http://forwardmomentum.net/wp-content/uploads/2017/12/climbing-team_small.jpg
+10. togetherwecan picture : https://thumbs.dreamstime.com/b/environmental-activists-putting-hands-together-sunny-day-50487987.jpg
+
+
+Scroll up Back to Top image source :
+1. Lost
+
+Tools used :
+2. LunaPic -  https://www.google.com/search?source=hp&ei=685GW-GnCtX0rQHqh4fACA&q=lunapic&oq=lunapic&gs_l=
+psy-ab.3..0l10.495.1713.0.1776.11.8.1.1.1.0.101.415.7j1.8.0....0...1c.1.64.psy-ab..1.10.423...0i131k1j0i10k1.0.cIR60Czm-E0
+
+
+
+Background Image source : 
+1. Lost
+
+
+
+Countdown Timer source :
+1. https://codepen.io/SitePoint/pen/MwNPVq

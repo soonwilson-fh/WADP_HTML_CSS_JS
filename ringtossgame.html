@@ -1,0 +1,85 @@
+<!doctype html>
+<meta charset="UTF-8">
+<html>
+<head>
+<title> GreenFuture Website
+</title>
+<link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+<!-- CSS links -->
+<link rel="stylesheet" type="text/css" href="css/css.css"/>
+<link rel="stylesheet" type="text/css" href="css/Project CSS.css"/>
+
+<!-- Bootstrap links -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+</head> 
+
+
+<body>
+<header> 
+	<nav>
+<div class="container-full">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" >
+	   <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+    	<ul class="nav navbar-nav">
+    		<li id="space0" style="background-color:#47d1d1; border-radius:8px;  "><a href="GreenFutureHomepage.html">Home</a></li>
+    		<li class="space"><a href="eventsnavpage.html" onclick=>Events</a></li>
+    		<li class="space"><a href="home.html">Product Sales</a></li>
+    		<li class="space"><a href="DIY Section.html">DIY Section</a></li>
+			<li class="signup"><a href="member.html">REGISTER</a></li>
+			<li class="login"><a href="login.html">LOG IN</a></li>
+			
+			<!-- Zi Xiang's template -->
+			<li class="dropdown signup"><a class="dropdown-toggle"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span id="suser">Welcome</span><span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Profile</a></li>
+			  <li><a href="#">View Past Transactions</a></li>
+			  <li><a href="#">View Past Events</a></li>
+			  <li onclick="logout()"><a href="#">Log Out</a></li>
+			</ul>
+      
+    	
+    	</ul><!-- Main Navigation -->
+    </div><!--/.nav-collapse -->
+</div>
+	</nav>
+</header>	
+<style>  
+head.h1 {
+font-size: 3em;
+font-family: Arial ;}
+#ringtossmed{float:right;}
+</style>
+<h1>DIY Section</h1>
+</head>
+<body>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNXVRsvAZh4V-7sPZxymOy1gz8S37sIGdaFZrBORfPvu2DnHmt3Q" style="width: 250px; height: 187px; margin-left: -5px; margin-right: -4px; margin-top: 0px;" title="Main Image" width="180" data-atf="3" alt="Main Picture"/>
+<img id="ringtossmed" <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAGkAQgMBEQACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAACAAMFBgcBBP/EADoQAAEDAwEEBgcFCQAAAAAAAAEAAgMEBREhBgcSMRNBUWFxsRQiI6KjssElUpKh0RUXNlNiY3KBkf/EABoBAQADAQEBAAAAAAAAAAAAAAABBAUDAgb/xAAnEQEAAgEBCAICAwAAAAAAAAAAAQIDEQQFEiExMjNxIoFRYRMjQv/aAAwDAQACEQMRAD8A2dikOBASBIFp2oOIEUAOQNokTUQcCDqCKvz5WSWwxEYNWQ5v3vYyadyiXPJM6RozPd36Q3ejXxmTDPRakyM0wcTNx/vJ5+KrbNaJm2n5VtlvxWvH4lsStLrhQA5A2iRNRBwICQQ20J4aizd9cR8CZeZ6w5Zeke2Y7v3k72qzXnBVj4rSquzd1/arsfdk9tnVxfcKAHIG0SJiIOBB1Eou908lVU2xsTeIxVJmdryaGOb5vCiesOd41ZJsVIabe63pNGz+lxNPUTkuHylVNmmOO8ftU2SYi94n8twVxfcKAHIg2iRMRBwFEhqJWwQSTPzwxtLjjngKB5aOJjoZaio4XzStxK4HIA+6P6Rr48+ZUa8tXmejDKy3TudT1FHI+Gam1hkY7DmY5YK+ejbZpbVj3tes8dWwbEX2S/WYSVYa2tp39DUBowHOAyHDuIIPccjqW3s+eM1OKGpgy/yU1WAqw7AciDaJE1CTgQRu07jHYqpzTggN+YLnmnTHaf0837ZeC1yv/ZjDk5MOfyXinj+nCkzws5pXg04yV8fedFHXks+6932neGg6GKA478yre3Pr/HaFnY57mglbK8bKIAiRNQk4EEXtV/D1aexgPvBcs/it6l5t0lG2g5ssB6zBn8l4x9n0rY/HHpmVLJinC+RvHyZ/FyWvdO/jul5PZDB80i+g3VGlJWd3zrxS0krWaRsogCJE1EHAiUZtSM7PVwH8seYXLP47enm/bKBsFRx2enxy6H6LlhnXH9KuOfgzOJ+IBqvmJj5Mmbclw3OOL7hez2Rwecq3t3RpSV7dnS0tOK02oByINokbUQMIlG7T6WCtP9v6hc8vjl4v2yq2zh4bHAT1RfRVdmnTFHpUx9jNwD0AAXz/APpkX5wuu5gYq72e1kHnItzd/bLQ3VPxs08rSaoHIgGESJqIOBEo3aUZsNZ/gPMLlm8dvTxftlUtm2/YsOTr0QVLBb+mPSpi7VGjp2iLPFyXzs3nVnWppC57pA0VF54efsc++t7dczpb6XN3afPRopWs0wuQAg61EHAiUftEQLHWuIyBHnHguWfx29PGTlSVJ2ekLbHE550EfNZ2G2mL6UsUzwQqDGDoD6+qwJ116Kd40jmtW5/Suvjc59WDzkX0O7Z+MrG7eXG0srTagXKUG0Sca0IgYCJRO1zXHZa7cDXOeKSQgNBJyGk6Ac1zyxNqTEOeSJtSYhi9Jem11uZA6qg9HYACxwxx+IPP9fBZuPBlrGkwo4cWatdLqjPM+31HT02I4+J3FFGQGuaTnGFevs1cuPS3VYvgi9ZiWq7i52Vk19ngLnw+wZxlhALvXJGvXqM+IXPZcNsUTxOexYL4YmLNXwri84WhEA4AiTgCIdUBHUIIGq2M2aqnufNZqTjccucxnAT+HCnWU6y8f7uNkCcuscD+58j3D/hcoQn7ZbKC00raS2UkNLTtJIjhYGjJ5nTrQexBwhAOFKRIglASBIEgSBIEgSlL/9k=" height="180" style="margin-right:-15px" width="135" alt="Image result for blank image" data-atf="3" alt="Pictures and videos"/>
+<h1> Games</h1>
+<p>Create your own items using recycled materials! <br>
+Ring toss game <br>
+Here's what you need:<br>
+<ul id="listofthings"><li>Plastic bottles/Glass bottles</li>
+<li>Paper/Cardboard</li>
+<li>Crate/Box</li>
+</ul></p>
+<p>
+<h3 id="instructions">Instructions:</h3>
+<br>
+<ul><li>
+Step 1: Fold/cut the paper.cardboard into a ring shape </li>
+<li>Step 2: Place the bottles in the crate and ensure they are supported and will not fall (Add bits of cardboard if there are spaces)</li>
+<li>Step 3: And you are done! Enjoy the game by tossing rings onto the bottles</li></ul>
+<img id="ringtossmed" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHgAtAMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAGxABAQEAAwEBAAAAAAAAAAAAAAERITFBEnH/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDqMiyLSDJhi09BLExuxkEwxTOAMPlYloJhgoMyNYSaoM4YpAPlMapgM4mNUBMIpQBAFtAAtXUXwDUvawoILiegvSVagIsT1YC6eJVBKKYCShSggALKukidUC9qgot6IJ+IGKJQXRJF4AT1bWQaiWC+AzixZhwAnq1PQUNTQDEUBGjIBOlxFBnFS1VFqSYmmoEVDQVFrKiiKAABoQQa8S9EQARVEXwwwBdTEQa1awQFABBbBRCRdUCRL2ciAAAACw9Q0FOE0BekAF0QAvYlAXCwXgEBQS0WwgIsKQCQqWrOgMSrE9AgvBwCC8IC4EQFww5ASgvAMkXNAMFnRgIFFFpFqThAMRoGY0iUDUvaigAgsEIBSNJQVm00BN5VF3hRYIIKYSroM0UUTQALSVQDtmqAkUAAANAA1fABmqAIKAigCNQANAB//9k=" class="rISBZc M4dUYb" height="120" style="margin-right:-15px" title="https://www.pexels.com/search/blank/" width="180" alt="Image result for blank image" data-atf="3" alt="Pictures and videos"/>
+</body>
+</html>

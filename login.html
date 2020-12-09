@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+<style>
+* {margin:5px;
+   padding:0.5em;
+   text-align:center;
+   }
+   
+form {background-color:white;
+      padding:auto;
+	  height:auto;
+	  width:45%;
+	  margin:14% auto;
+	  border-radius:8%;}
+
+#sub {margin-left:42%;}
+
+#admin {margin-left:1.8%;}
+
+h1 {color:green;
+    margin-right:86px;
+	font-weight:bold;
+	font-family:"Lucida Console", Monaco, monospace;}
+
+body{
+background: url(https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=350) center fixed;
+background-repeat: no-repeat;
+background-size: cover
+
+}	
+</style>
+<script>
+function check() {
+	var admin = document.getElementById("admin").value;
+	var password = document.getElementById("pass").value;
+	var valid = false;
+	var info = localStorage.getItem("student_info");
+	var info = JSON.parse(info);
+	for (var i = 0; i < info.length; i++){
+		var storedadmin = info[i].admin;
+		var storedpassword = info[i].password;
+	if (admin == storedadmin && password == storedpassword)
+		{valid = true;}
+	if (valid) {
+		alert("Login was successful.");
+		sessionStorage.setItem("admin",JSON.stringify(admin));
+		window.location.href="profile.html";
+		return false;
+		}
+	else if (admin != storedadmin || password != storedpassword)
+	{
+		continue;
+	}
+	}
+	alert("Username or Password is incorrect.");
+	}
+
+</script>
+</head>
+<body>
+<div class="container">
+<form>
+<h1>LOGIN HERE</h1>
+Admin &nbsp; &nbsp; <input id="admin" type="text" tabindex="1" required autofocus /><br>
+Password &nbsp; &nbsp; &nbsp; <input id="pass" type="password" tabindex="2" required autofocus /><br>
+<input id="sub" type="submit" value="Login" onclick="check(); return false;" tabindex="3">
+</form>
+</div>
+
+</body>
+</html>

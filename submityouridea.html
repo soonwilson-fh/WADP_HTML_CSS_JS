@@ -1,0 +1,152 @@
+<!doctype html>
+<meta charset="UTF-8">
+<html>
+<head>
+
+<title>GreenFuture Website</title>
+
+<!-- Font link(s) -->
+<link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+<!-- CSS links -->
+<link rel="stylesheet" type="text/css" href="css/css.css"/>
+<link rel="stylesheet" type="text/css" href="css/Project CSS.css"/>
+
+<!-- Bootstrap links -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+</head> 
+
+
+<body>
+ <header>
+    <nav>
+      <div class="container-full">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+	   <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="spacez" id="homez" style="background-color:#47d1d1; border-radius:8px; "><a href="GreenFutureHomepage.html">Home</a></li>
+            <li class="spacez navigatingitems"><a href="eventsnavpage.html" onclick=>Events</a></li>
+            <li class="spacez navigatingitems"><a href="home.html">Product Sales</a></li>
+            <li class="spacez navigatingitems"><a href="DIY Section.html">DIY Section</a></li>
+            <li class="spacez registerz"><a href="member.html">REGISTER</a></li>
+            <li class="spacez loginz"><a href="login.html">LOG IN</a></li>
+			
+			<!-- Zi Xiang's template -->
+			<li class="dropdown signup"><a class="dropdown-toggle"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span id="suser">Welcome</span><span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Profile</a></li>
+			  <li><a href="#">View Past Transactions</a></li>
+			  <li><a href="#">View Past Events</a></li>
+			  <li onclick="logout()"><a href="#">Log Out</a></li>
+			</ul>
+
+
+          </ul>
+          <!-- Main Navigation -->
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
+  </header>
+<script>
+     function loadImage(e) {
+	    var file=e.target.files[0];	
+		if (isImageFile(file.name)) {
+			readImageAndDisplay(file,document.getElementById("submitideamed"));
+		}
+	 }
+	 
+	 function isImageFile(str){
+		if (str.match(/.jpg/)||str.match(/.png/)||str.match(/.gif/))
+		  return true;
+		else
+		  return false;
+	 }
+	 
+	 function readImageAndDisplay(readFile,dest){
+		var reader = new FileReader();
+		reader.readAsDataURL(readFile);
+		reader.onload = function(imgsrc){
+			var base64Img=imgsrc.target.result;
+			dest.src=imgsrc.target.result;
+		}
+	 }
+
+function additem() {
+
+var node =  document.getElementById("itemlist");                
+var list = document.createElement('li');
+var input = document.createElement("input");  
+list.appendChild(input);        
+node.appendChild(list);                             
+}
+function delitem(){
+var list = document.getElementById("itemlist");   
+list.removeChild(list.lastChild);     
+
+}
+
+function addstep() {
+
+var node =  document.getElementById("steplist");                
+var list = document.createElement('li');
+var input = document.createElement("input");   
+list.appendChild(input);        
+node.appendChild(list);                             
+}
+function delstep(){
+
+var list = document.getElementById("steplist");   
+list.removeChild(list.lastChild);          
+
+}
+</script>
+</header>
+<style> 
+head.h1 {
+font-size: 3em;
+font-family: Arial ;}
+#submitideamed {float:right;}
+#myPhoto {
+width:120px;
+height:120px;
+border-radius:50%;
+display:block;
+		}
+</style>
+<h1>DIY Section</h1>
+</head>
+<body>
+<input onchange="loadImage(event)" type="file" >
+<input onchange="loadImage(event)" type="file" id="submitideamed">
+<h1>Category</h1>
+<p>Create your own items using recycled materials! <br>
+Name of item <br>
+Please enter the items needed:<br>
+<ol id="itemlist">
+<li><input/></li>
+<li><input/></li>
+<li><input/></li>
+</ol><input id="additem" type="button"  value="Add Item" onclick="additem()"><input id="delitem" type="button"  value="Remove Item" onclick="delitem()"></p>
+<p>
+<h3>Instructions:</h3>
+<br>
+<ol id="steplist">
+<li><input/></li>
+<li><input/></li>
+<li><input/></li></ol>
+<input id="addstep" type="button"  value="Add Step" onclick="addstep()"><input id="delstep" type="button"  value="Remove Step" onclick="delstep()"></p>
+<input onchange="loadImage(event)" type="file" id="submitideamed">
+</body>
+<br><br><br>
+<input type="Submit"/>

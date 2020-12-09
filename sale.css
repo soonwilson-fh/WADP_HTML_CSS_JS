@@ -1,0 +1,36 @@
+.img figure{
+	display: inline-block;
+	margin: 40px;
+}
+
+.category ul li {
+	display: inline-block;
+	margin: 10px 20px;
+	border-radius:10px;
+			width:120px;
+		height:20px;
+		background-color:rgb(77, 121, 255);
+	color:white;	
+
+	
+}
+.current {
+		font-weight:bold;
+		color:black;
+}
+
+.category ul li a 
+
+
+
+.category li:hover {
+	color:black; background-color:rgb(55, 11, 51);
+	border-radius:8px;
+	}
+
+.current{
+	background-color: rgba (0,0,138,0,3); 
+	}
+body { 
+	text-align:center;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>More about GreenFuture</title>
+
+<!-- Font link(s) -->
+<link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+
+<!-- CSS links -->
+<link rel="stylesheet" type="text/css" href="css/css.css"/>
+<link rel="stylesheet" type="text/css" href="css/cssnav.css"/>
+
+<!-- Bootstrap links -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+<!-- shieldui css and js assets in order for the charts to work -->
+<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+ 
+</head> 
+
+<body>
+ <header>
+    <nav>
+      <div class="container-full">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+	   <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="spacez" id="homez" style="background-color:#47d1d1; border-radius:8px; "><a href="GreenFutureHomepage.html">Home</a></li>
+            <li class="spacez navigatingitems"><a href="eventsnavpage.html" onclick=>Events</a></li>
+            <li class="spacez navigatingitems"><a href="home.html">Product Sales</a></li>
+            <li class="spacez navigatingitems"><a href="DIY Section.html">DIY Section</a></li>
+            <li class="spacez registerz"><a href="member.html">REGISTER</a></li>
+            <li class="spacez loginz"><a href="login.html">LOG IN</a></li>
+			
+			<!-- Zi Xiang's template -->
+			<li class="dropdown registerz spacez"><a class="dropdown-toggle"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><span id="suser" class="welcome">Welcome</span><span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Profile</a></li>
+			  <li><a href="#">View Past Transactions</a></li>
+			  <li><a href="#">View Past Events</a></li>
+			  <li onclick="logout()"><a href="#">Log Out</a></li>
+			</ul>
+
+
+          </ul>
+          <!-- Main Navigation -->
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
+  </header>
+
+<div class="container border textz margintop">
+<h1 class="title"> More about GreenFuture </h1>
+				<p>
+				" At their core, organisations are just a giant network of relationships. So if you fail to build those relationships, your chances of succeeding are not very high. " 
+				This is a quote borrowed from Quote Master, and these words define our very purpose and who we strives to become. 
+				</p>
+				<p>
+				We are a non-profit organisation whose aim are shared together with our friend, Claire, who strongly believe in contributing to make the envrionment a better place.
+				We are made up of a group of like-minded individuals, who feels compelled to do more to save the environment.
+				</p>
+				<p>
+				Events, Community-sessions, Voluntary Initiatives. That are the " stars " which the organisation revolves around! 
+				However, to actually turn it into a successful organisation, we will definitely need you and your help, to participate in such activities, to turn this world better, and to build a green future!
+				<br>
+				<br>
+				<button onclick="goBack()">Back to Home <span style="color:black;">>>></span></button> 
+				<br>
+				<br>
+				</p>
+				
+</div>
+
+<!-- Scrollup -->
+<div class="scrollup floating" style="display: block;">
+<a href="#" style="display: block;">to Top</a> 
+</div>
+<!-- Tree ' back to top ' jquery Script -->
+<script>
+  $(document).ready(function () {
+ $(window).scroll(function () {
+	 if ($(this).scrollTop() > 100)    {$('.scrollup').fadeIn();} 
+	 else 							  {$('.scrollup').fadeOut();}
+ });
+$('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+<!-- 600 represents the speed of scrolling up -->
+        return false;
+    });
+});
+</script>
+
+<!-- css for tree ' back to top ' scroll up -->
+ <style>
+ 
+
+.scrollup {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    text-indent: -9999px; 
+	/* Indent ' to Top ' text from line 225, to extreme left to hide the words */
+	z-index:9999px;
+	/* Highest stack, will always appear infront of other codes */
+    background: url('BacktoTop.png') no-repeat;
+ background-size: contain;    cursor:pointer;
+}
+
+
+.floating{
+    animation-name: Floatingx;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+
+@keyframes Floatingx {
+    from {bottom:0px;}
+    65% { bottom:15px;}
+    to { bottom:-0px; }    
+}
+    
+	
+  </style>
+  
+  
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+</html>

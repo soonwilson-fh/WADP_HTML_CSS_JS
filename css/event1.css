@@ -1,0 +1,30 @@
+
+.right{
+	float:right;
+}
+.left{
+	float:left;
+}
+
+table,td,th{
+	border:2px solid black;
+	border-collapse:collapse;
+	color: #00e600;
+	font-weight:bold;
+	padding:10px;
+	background-color:white;
+}
+td,th{
+	padding-top:5px;
+	padding-bottom:5px;
+	text-align:center;
+	
+}
+button{
+	text-align:center;
+	padding:15px;
+	color:yellow;
+	border-radius:15px;
+	background-color:white;
+	border: 3px solid grey;
+}

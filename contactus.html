@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>
+Contact us
+</title>
+<script>
+document.addEventListener("DOMContentLoaded",docIsReady);
+var contact_info;
+
+function docIsReady(){
+	contact_info=localStorage.getItem("contact_info");
+ 
+	if (contact_info==null){
+		contact_info=[];
+	}
+	else {	
+		contact_info=JSON.parse(contact_info);
+	}
+	}
+	
+function save_contact() {
+	var name = document.getElementById("contact_name").value;
+	var email = document.getElementById("contact_email").value;
+	var admin = document.getElementById("contact_admin").value;
+	var title = document.getElementById("contact_title").value;
+	var description = document.getElementById("contact_description").value;
+	var info = {"name":name,"admin":admin,"email":email,"title":title,"description":description};
+	contact_info.push(info);
+	localStorage.setItem("contact_info",JSON.stringify(contact_info));
+	}
+</script>
+
+
+</head>
+
+<body>
+<center>
+<form>
+<h1>Have any questions or feedback? Tell or ask us here! </h1>
+<label for="contact_name" class="left">Name:</label>
+<input type="text" id="contact_name" name="contact_name" required /><br><br>
+<label for="contact_email" class="left">Email:</label>
+<input type="text" id="contact_email" name="contact_email" required /><br><br>
+<label for="contact_admin" class="left">Admin.No:</label>
+<input type="text" id="contact_admin" name="contact_admin"/ required ><br><br>
+<label for="contact_title" class="left">Subject Title:</label>
+<input type="text" id="contact_title" name="contact_title"/ required ><br><br>
+<p class="left">Description box</p>
+<textarea rows="6" cols="50" id='contact_description' > </textarea>
+<br>
+<input id="btn" type="submit" value="Submit" onclick='save_contact()'>
+</form>
+</center>
+</body>
+
+
+</html>
